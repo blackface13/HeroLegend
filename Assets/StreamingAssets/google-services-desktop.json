@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "472528932960",
+    "firebase_url": "https://heroeslegend-blf1306.firebaseio.com",
+    "project_id": "heroeslegend-blf1306",
+    "storage_bucket": "heroeslegend-blf1306.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472528932960:android:00a02b5c04c76c8c",
+        "android_client_info": {
+          "package_name": "com.blackface.hl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "472528932960-banrt0osq3v7mp82f4lbt7srm2odbska.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbXXSvFv9ulgMRj8cLo7LdHoB7JTX8v64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "472528932960-banrt0osq3v7mp82f4lbt7srm2odbska.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8267828881809259~1846313456"
+    }
+  ],
+  "configuration_version": "1"
+}
