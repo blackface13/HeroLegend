@@ -117,7 +117,7 @@ public static class Languages {
         lang[58] = "Âm thanh";
         lang[59] = "Ngôn ngữ";
         //--------Button
-        lang[60] = "OK";
+        lang[60] = "Chấp nhận";
         lang[61] = "Chọn NV";
         lang[62] = "Phản hồi";
         lang[63] = "Thoát game";
@@ -388,6 +388,8 @@ public static class Languages {
         lang[343] = "Lá bài đổi màu +4: Bạn có quyền lựa chọn màu sắc cho lượt tiếp theo, đồng thời buộc người chơi tiếp theo bốc 4 lá bài và mất lượt";
         lang[344] = "Thông tin cách chơi";
         lang[345] = "Tự bốc bài khi không có lá phù hợp";
+        lang[346] = "Vui lòng nhập tên";
+        lang[347] = "Tên không được chứa ký tự đặc biệt";
 
         //Thông tin chỉ số
         lang[700] = "+{0} Sát thương vật lý";
@@ -1796,6 +1798,8 @@ public static class Languages {
         lang[343] = "Change color +4: allow you choose a color for next round, forced next player get 4 card and skip their round";
         lang[344] = "Informations";
         lang[345] = "Fast get card";
+        lang[346] = "Please input your name";
+        lang[347] = "Your name has special character";
 
         //Thông tin chỉ số
         lang[700] = "+{0} Attack physic";

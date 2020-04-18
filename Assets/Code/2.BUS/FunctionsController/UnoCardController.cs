@@ -54,6 +54,7 @@ namespace Assets.Code._2.BUS.FunctionsController
         private RectTransform RectArrowSpin;
 
         private readonly bool IsDeveloper = false;//Chế độ phát triển, khi public thì disable nó
+        private bool EndCard;//Khi 1 ng chơi hết bài thì = true => chống chế độ tự bốc bài bốc thêm
         #endregion
 
         #region Initialize
@@ -197,6 +198,8 @@ namespace Assets.Code._2.BUS.FunctionsController
         /// </summary>
         private void SetupNewBattle()
         {
+            ObjController[21].SetActive(false);//Ẩn anim bốc bài
+            EndCard = false;
             // GameSystem.UpdateResourceText(TextUI[3], TextUI[11]);//Cập nhật lại tiền và kim cương
             ObjController[16].SetActive(false);
             GameSystem.DisposeAllObjectChild(ObjController[3]);
@@ -339,23 +342,28 @@ namespace Assets.Code._2.BUS.FunctionsController
                 yield return new WaitForSeconds(delayTime);
                 IsControl = true;
 
-                AutoGetCard();
-                ShowImgSupport();
-            }
-            ObjController[11].transform.position = ObjectPositionCountCard[CurentRound].transform.position;//Di chuyển nút loading
-        }
+                //Tìm xem có lá bài nào có thể đánh dc ko để show anim bốc bài
+                if (!EndCard)
+                {
+                    var result = FindMatchCard(UserCards[0]);
+                    if (result == null)
+                    {
+                        ObjController[21].SetActive(true);//Show anim bốc bài
+                        ObjController[21].GetComponent<Animator>().SetTrigger("GetCard");
+                    }
 
-        /// <summary>
-        /// Tự bốc bài nếu bật chức năng
-        /// </summary>
-        private void AutoGetCard()
-        {
-            if (DataUserController.User.UnoSettingFastGetCard && UserCards[0].Count > 0)
-            {
-                var result = FindMatchCard(UserCards[0]);
-                if (result == null)
-                    GeneralFunctions(5);
+                    //Tự bốc bài nếu bật chức năng
+                    if (DataUserController.User.UnoSettingFastGetCard && UserCards[0].Count > 0 && result == null)
+                    {
+                        GeneralFunctions(5);
+                    }
+                    ShowImgSupport();
+                }
             }
+            else
+                ObjController[21].SetActive(false);
+
+            ObjController[11].transform.position = ObjectPositionCountCard[CurentRound].transform.position;//Di chuyển nút loading
         }
 
         /// <summary>
@@ -723,6 +731,12 @@ namespace Assets.Code._2.BUS.FunctionsController
                 {
                     slotThrow = FindMatchCard(UserCards[slotUser]);
                     yield return new WaitForSeconds(UnoCardSystem.TimeDelayAIAction);
+
+                    //Tìm thấy lá bài cuối cùng phù hợp để đánh
+                    if (slotThrow != null && UserCards[slotUser].Count == 1)
+                    {
+                        EndCard = true;
+                    }
 
                     //AI rút thêm bài nếu ko tìm thấy lá bài phù hợp trong list
                     if (slotThrow == null && !IsGetCard)
@@ -1226,6 +1240,7 @@ namespace Assets.Code._2.BUS.FunctionsController
                 case 5://Rút thêm thẻ bài
                     if (IsControl && !IsGetCard)
                     {
+                        ObjController[21].SetActive(false);//Ẩn anim bốc bài
                         StartCoroutine(GetCard(0, 1, false));
                     }
                     break;

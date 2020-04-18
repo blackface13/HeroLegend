@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A8B216ED-7A41-2A0E-23F9-D9D56C44D765}</ProjectGuid>
+    <ProjectGuid>{6086DA44-FB60-26C2-050B-8924903F7D06}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Sirenix.OdinInspector.CompatibilityLayer.Editor</AssemblyName>
@@ -307,94 +307,88 @@
       <HintPath>H:/Unity/2018.4.20f1/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
     </Reference>
     <Reference Include="DemiEditor">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenEditor">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenPro">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenProEditor">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/FacebookSDK/Plugins/Facebook.Unity.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/FacebookSDK/Plugins/Facebook.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Editor">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/FacebookSDK/Plugins/Editor/Facebook.Unity.Editor.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/FacebookSDK/Plugins/Editor/Facebook.Unity.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Gameroom">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/FacebookSDK/Plugins/Gameroom/Facebook.Unity.Gameroom.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/FacebookSDK/Plugins/Gameroom/Facebook.Unity.Gameroom.dll</HintPath>
     </Reference>
     <Reference Include="FacebookNamedPipeClient">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/FacebookSDK/Plugins/Gameroom/FacebookNamedPipeClient.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/FacebookSDK/Plugins/Gameroom/FacebookNamedPipeClient.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/FacebookSDK/Plugins/Settings/Facebook.Unity.Settings.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/FacebookSDK/Plugins/Settings/Facebook.Unity.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Mini Profiler">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Mini Profiler/Mini Profiler.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Mini Profiler/Mini Profiler.dll</HintPath>
     </Reference>
     <Reference Include="Mini Profiler Editor">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Mini Profiler/Editor/Mini Profiler Editor.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Mini Profiler/Editor/Mini Profiler Editor.dll</HintPath>
     </Reference>
     <Reference Include="Google.IOSResolver_v1.2.136.0">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.136.0.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.136.0.dll</HintPath>
     </Reference>
     <Reference Include="Google.JarResolver_v1.2.136.0">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.136.0.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.136.0.dll</HintPath>
     </Reference>
     <Reference Include="Google.VersionHandler">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
     </Reference>
     <Reference Include="Google.VersionHandlerImpl_v1.2.136.0">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.136.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Data.Sqlite">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Attributes">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Editor">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization.Config">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Utilities">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Utilities.Editor">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.136.0.dll</HintPath>
     </Reference>
     <Reference Include="NSubstitute">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Library/PackageCache/com.unity.2d.common@1.0.10-preview/Tests/Editor/Lib/NSubstitute/NSubstitute.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Advertisements">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Library/PackageCache/com.unity.2d.common@1.0.10-preview/Tests/Editor/Lib/NSubstitute/NSubstitute.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Library/PackageCache/com.unity.analytics@3.2.3/Editor/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Library/PackageCache/com.unity.analytics@3.2.3/Editor/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Library/PackageCache/com.unity.analytics@3.2.3/Editor/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Library/PackageCache/com.unity.analytics@3.2.3/Editor/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>H:/Projects/GameDevelop/HeroesLegend/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities">
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities.Editor">
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Editor">
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization.Config">
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>H:/Unity/2018.4.20f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

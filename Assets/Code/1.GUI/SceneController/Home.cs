@@ -47,19 +47,16 @@ public class Home : MonoBehaviour
         SetupLanguage();
         SetupVectorButtonFunctions();
         SetupShowHeroInTeam();
+
+        if(string.IsNullOrEmpty(DataUserController.User.UserName))
+        {
+            HiddenOrShowEffect(false);
+            GameSystem.InitializePrefabUI(12);
+            StartCoroutine(WaitingCloseUI(12));
+        }
         //RunTutorial();
     }
 
-    /// <summary>
-    /// Chạy hướng dẫn
-    /// </summary>
-    private void RunTutorial()
-    {
-        if(!GameSystem.Tutorial[0])
-        {
-
-        }
-    }
     /// <summary>
     /// Thiết lập ngôn ngữ
     /// </summary>
@@ -301,6 +298,14 @@ public class Home : MonoBehaviour
             case 11://SettingCanvasUI
                 yield return new WaitUntil(() => GameSystem.SettingCanvasUI == null);
                 if (GameSystem.SettingCanvasUI == null)
+                {
+                    HiddenOrShowEffect(true);
+                    SetupLanguage();
+                }
+                break;
+            case 12://InputNameCanvasUI
+                yield return new WaitUntil(() => GameSystem.InputNameCanvasUI == null);
+                if (GameSystem.InputNameCanvasUI == null)
                 {
                     HiddenOrShowEffect(true);
                 }

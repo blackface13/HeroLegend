@@ -29,7 +29,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474711630}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4914}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.00008, y: 1.00008, z: 1.00008}
   m_Children: []
   m_Father: {fileID: 8625564943732492416}
@@ -3848,7 +3848,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8625564944356483658}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4914}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.00008, y: 1.00008, z: 1.00008}
   m_Children: []
   m_Father: {fileID: 8625564943732492416}
@@ -4753,16 +4753,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5054685404606343413}
     m_Modifications:
-    - target: {fileID: 2487245590352445815, guid: a9e2062ae4d7f7e40abb109943f628b0,
-        type: 3}
-      propertyPath: m_Name
-      value: BreakBallButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 2487245590352445815, guid: a9e2062ae4d7f7e40abb109943f628b0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2487245590352445812, guid: a9e2062ae4d7f7e40abb109943f628b0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4867,6 +4857,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487245590352445815, guid: a9e2062ae4d7f7e40abb109943f628b0,
+        type: 3}
+      propertyPath: m_Name
+      value: BreakBallButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2487245590352445815, guid: a9e2062ae4d7f7e40abb109943f628b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9e2062ae4d7f7e40abb109943f628b0, type: 3}

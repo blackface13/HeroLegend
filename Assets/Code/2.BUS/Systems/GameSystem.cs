@@ -71,6 +71,7 @@ public static class GameSystem
     public static GameObject UnoCardCanvasUI;
     public static GameObject UnoIntroductionCanvasUI;
     public static GameObject SettingCanvasUI;
+    public static GameObject InputNameCanvasUI;
     #endregion
 
     public static AudioSource BGM;
@@ -547,6 +548,11 @@ public static class GameSystem
                 SettingCanvasUI.GetComponent<Canvas>().worldCamera = Camera.main;
                 SettingCanvasUI.GetComponent<Canvas>().planeDistance = 8;
                 break;
+            case 12: //InputNameCanvasUI
+                InputNameCanvasUI = (GameObject)MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/UI/InputNameCanvasUI"), new Vector3(0, 0, 0), Quaternion.identity);
+                InputNameCanvasUI.GetComponent<Canvas>().worldCamera = Camera.main;
+                InputNameCanvasUI.GetComponent<Canvas>().planeDistance = 8;
+                break;
             default:
                 break;
         }
@@ -597,6 +603,9 @@ public static class GameSystem
                 break;
             case 11: //SettingCanvasUI
                 MonoBehaviour.Destroy(SettingCanvasUI);
+                break;
+            case 12: //InputNameCanvasUI
+                MonoBehaviour.Destroy(InputNameCanvasUI);
                 break;
             default:
                 break;
@@ -924,4 +933,18 @@ public static class GameSystem
     }
     #endregion
 
+
+    /// <summary>
+    /// Check ký tự đặc biệt
+    /// </summary>
+    public static bool HasSpecialChar(string input)
+    {
+        string specialChar = @"\|!#$%&/()=?»«@£§€{}.-;'<>_,";
+        foreach (var item in specialChar)
+        {
+            if (input.Contains(item)) return true;
+        }
+
+        return false;
+    }
 }

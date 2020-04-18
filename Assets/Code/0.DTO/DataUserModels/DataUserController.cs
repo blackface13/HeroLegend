@@ -200,6 +200,7 @@ public static class DataUserController
         //Tặng item nếu như game mới
         if (IsNewGame)
         {
+            //Trang bị
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 0, 0, 1));//Kiếm ngắn
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 1, 0, 1));//Kiếm ngắn
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 2, 0, 1));//Kiếm ngắn
@@ -209,16 +210,36 @@ public static class DataUserController
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 6, 0, 1));//Kiếm ngắn
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 7, 0, 1));//Kiếm ngắn
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 8, 0, 1));//Kiếm ngắn
-            // Inventory.DBItems.Add (ItemDropController.CreateItem (global::Items.ItemType.equip, 1, false, 1, 1));
-            // Inventory.DBItems.Add (ItemDropController.CreateItem (global::Items.ItemType.equip, 1, false, 21, 1));
-            // Inventory.DBItems.Add (ItemDropController.CreateItem (global::Items.ItemType.equip, 1, false, 40, 1));
-            // Inventory.DBItems.Add (ItemDropController.CreateItem (global::Items.ItemType.equip, 1, false, 140, 1));
-            // Inventory.DBItems.Add (ItemDropController.CreateItem (global::Items.ItemType.equip, 1, false, 160, 1));
-            // Inventory.DBItems.Add (ItemDropController.CreateItem (global::Items.ItemType.equip, 1, false, 170, 1));
 
-            // Inventory.DBItems.Add (ItemDropController.CreateItem (global::Items.ItemType.quest, 1, false, 330, 100));
-            // Inventory.DBItems.Add (ItemDropController.CreateItem (global::Items.ItemType.quest, 1, false, 331, 80));
-            // Inventory.DBItems.Add (ItemDropController.CreateItem (global::Items.ItemType.quest, 1, false, 230, 20));
+            //Vật phẩm
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 0,  5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 1,  5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 2,  5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 3,  5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 4,  5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 5,  5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 6,  5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 7,  5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 8,  5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 9,  5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 10, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 11, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 12, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 13, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 14, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 15, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 16, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 17, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 18, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 19, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 20, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 21, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 22, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 23, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 24, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 25, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 26, 10));
+
             SaveInventory();
             IsNewGame = false;
         }
@@ -242,7 +263,7 @@ public static class DataUserController
 
         if (string.IsNullOrEmpty(strsave))
         {
-            CreateNewPlayer("Tank", "Tank");
+            CreateNewPlayer("", "");
         }
         else
             User = JsonUtility.FromJson<Player>(strsave);

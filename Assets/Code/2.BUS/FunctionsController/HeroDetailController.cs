@@ -67,7 +67,7 @@ public class HeroDetailController : MonoBehaviour {
         HeroAvt = (GameObject) Instantiate (Resources.Load<GameObject> ("Prefabs/HeroAvt/Hero" + DataUserController.Heroes.DBHeroes[GlobalVariables.HeroSlotSelected].ID.ToString ()), new Vector3 (-11.5f, -3f, 0), Quaternion.identity);
         HeroAvt.GetComponent<SortingGroup> ().sortingOrder = 302;
         HeroAvt.transform.SetParent (ObjectController[1].transform, true);
-        HeroAvt.transform.position = new Vector3(HeroAvt.transform.position.x, HeroAvt.transform.position.y, 0);
+        HeroAvt.transform.localPosition = new Vector3(HeroAvt.transform.localPosition.x, HeroAvt.transform.localPosition.y, 0);
         CaculatorValueHeroes (GlobalVariables.HeroSlotSelected);
         SlotHeroViewing = GlobalVariables.HeroSlotSelected;
         SetupItemEquiped ();
