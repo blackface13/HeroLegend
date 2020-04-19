@@ -165,6 +165,8 @@
     <Compile Include="Assets\Code\2.BUS\Misc\InputNameController.cs" />
     <Compile Include="Assets\Code\2.BUS\Misc\MiscAnimationController.cs" />
     <Compile Include="Assets\Code\2.BUS\Misc\UnoCardRankGameEnding.cs" />
+    <Compile Include="Assets\Code\2.BUS\Misc\VoteBoxController.cs" />
+    <Compile Include="Assets\Code\2.BUS\Misc\VoteFunctionController.cs" />
     <Compile Include="Assets\Code\2.BUS\Systems\ControlFunctions.cs" />
     <Compile Include="Assets\Code\2.BUS\Systems\ErrorCode.cs" />
     <Compile Include="Assets\Code\2.BUS\Systems\GameFirstSetup.cs" />
@@ -617,8 +619,14 @@
     <Reference Include="Mini Profiler">
       <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Mini Profiler/Mini Profiler.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>H:/Projects/GameDevelop/HeroLegend/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Editor">
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization.Config">
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.Serialization">
       <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
@@ -629,14 +637,8 @@
     <Reference Include="Sirenix.Utilities.Editor">
       <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Sirenix.OdinInspector.Editor">
-      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Attributes">
-      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization.Config">
-      <HintPath>H:/Projects/GameDevelop/HeroLegend/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>H:/Projects/GameDevelop/HeroLegend/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>H:/Unity/2018.4.20f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

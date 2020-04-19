@@ -72,6 +72,7 @@ public static class GameSystem
     public static GameObject UnoIntroductionCanvasUI;
     public static GameObject SettingCanvasUI;
     public static GameObject InputNameCanvasUI;
+    public static GameObject VoteFunctionCanvasUI;
     #endregion
 
     public static AudioSource BGM;
@@ -553,6 +554,11 @@ public static class GameSystem
                 InputNameCanvasUI.GetComponent<Canvas>().worldCamera = Camera.main;
                 InputNameCanvasUI.GetComponent<Canvas>().planeDistance = 8;
                 break;
+            case 13: //VoteFunctionCanvasUI
+                VoteFunctionCanvasUI = (GameObject)MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/UI/VoteFunctionCanvasUI"), new Vector3(0, 0, 0), Quaternion.identity);
+                VoteFunctionCanvasUI.GetComponent<Canvas>().worldCamera = Camera.main;
+                VoteFunctionCanvasUI.GetComponent<Canvas>().planeDistance = 8;
+                break;
             default:
                 break;
         }
@@ -606,6 +612,9 @@ public static class GameSystem
                 break;
             case 12: //InputNameCanvasUI
                 MonoBehaviour.Destroy(InputNameCanvasUI);
+                break;
+            case 13: //VoteFunctionCanvasUI
+                MonoBehaviour.Destroy(VoteFunctionCanvasUI);
                 break;
             default:
                 break;

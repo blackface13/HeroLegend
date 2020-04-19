@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public static class GlobalVariables {
 
     #region Showing Hero Detail 
-
+    public static readonly int VoteCode = 1;//Mã vote để xác định ng chơi đã vote hay chưa để hiển thị
     public static int HeroSlotSelected; //Index của tướng mà user sở hữu để hiển thị chi tiết
     public static List<int> HeroSlotListSelected; //Danh sách tướng đã chọn để hiển thị chi tiết next hoặc prev
     public static ItemModel ItemViewing; //Item đang được chọn, để view

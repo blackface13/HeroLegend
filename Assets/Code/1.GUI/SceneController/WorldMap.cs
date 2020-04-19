@@ -12,7 +12,7 @@ public class WorldMap : MonoBehaviour {
     void Start () {
         //Languages.SetupLanguage(0);
         Module.PrevScene = "Room";
-        ADS.RequestBanner (0);
+        ADS.ShowBanner();
         #region Khởi tạo hoặc set Canvas thông báo cho Scene 
 
         try {

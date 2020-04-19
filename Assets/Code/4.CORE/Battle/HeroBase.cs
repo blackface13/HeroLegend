@@ -131,6 +131,7 @@ public class HeroBase : MonoBehaviour
         if (!Team.Equals(0)) //Nếu không phải nhân vật của user -> gán bộ trang bị cho enemy để tăng sức mạnh
             thisHero.ItemsEquip = ItemsEnemy;
         #region Tính toán lại các chỉ số dựa trên Level nhân vật 
+
         #region Tính toán chỉ số lúc đeo trang bị 
 
         var vAtkPlus = 0f; //Sát thương vật lý
@@ -167,69 +168,132 @@ public class HeroBase : MonoBehaviour
         {
             for (int i = 0; i < countItemEquip; i++)
             {
+
+                #region Tính toán chỉ số socket
+                //Khởi tạo variables
+                var socketvHealth = 0f;
+                var socketvHealthPlus = 0f;
+                var socketvAtk = 0f;
+                var socketvAtkPlus = 0f;
+                var socketvMagic = 0f;
+                var socketvMagicPlus = 0f;
+                var socketvMana = 0f;
+                var socketvManaPlus = 0f;
+                var socketvArmor = 0f;
+                var socketvArmorPlus = 0f;
+                var socketvMagicResist = 0f;
+                var socketvMagicResistPlus = 0f;
+                var socketvHealthRegen = 0f;
+                var socketvManaRegen = 0f;
+                var socketvDamageEarth = 0f;
+                var socketvDamageWater = 0f;
+                var socketvDamageFire = 0f;
+                var socketvDefenseEarth = 0f;
+                var socketvDefenseWater = 0f;
+                var socketvDefenseFire = 0f;
+                var socketvAtkSpeed = 0f;
+                var socketvLifeStealPhysic = 0f;
+                var socketvLifeStealMagic = 0f;
+                var socketvLethality = 0f;
+                var socketvMagicPenetration = 0f;
+                var socketvCritical = 0f;
+                var socketvTenacity = 0f;
+                var socketvCooldownReduction = 0f;
+                var socketvDamageExcellent = 0f;
+                var socketvDefenseExcellent = 0f;
+                var socketvDoubleDamage = 0f;
+                var socketvTripleDamage = 0f;
+                var socketvDamageReflect = 0f;
+                var socketvRewardPlus = 0f;
+
+                if (thisHero.ItemsEquip[i].SocketIDs.Count > 0)
+                {
+                    socketvAtk = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vAtk);
+                    socketvAtkPlus = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vAtkPlus);
+                    socketvMagic = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vMagic);
+                    socketvMagicPlus = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vMagicPlus);
+                    socketvHealth = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vHealth);
+                    socketvHealthPlus = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vHealthPlus);
+                    socketvMana = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vMana);
+                    socketvManaPlus = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vManaPlus);
+                    socketvArmor = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vArmor);
+                    socketvArmorPlus = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vArmorPlus);
+                    socketvMagicResist = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vMagicResist);
+                    socketvMagicResistPlus = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vMagicResistPlus);
+                }
+                #endregion
+
+
                 //Sát thương vật lý
                 var valueOriginal = thisHero.ItemsEquip[i].vAtk; //Chỉ số gốc
                 var valueBonusLevel = (thisHero.ItemsEquip[i].ItemLevel > 0 ? valueOriginal * (thisHero.ItemsEquip[i].ItemLevel * ItemCoreSetting.UpgradePerLevel) / 100f : 0); //Cộng chỉ số theo level
                 var valueBonusColor = (thisHero.ItemsEquip[i].ItemColor > 0 ? (valueOriginal + (valueOriginal * (thisHero.ItemsEquip[i].ItemLevel * ItemCoreSetting.UpgradePerLevel) / 100f)) * ((thisHero.ItemsEquip[i].ItemColor * ItemCoreSetting.UpgradePerColor) / 100f) : 0); //Cộng chỉ số theo màu sắc
-                var valueBonusPlus = thisHero.ItemsEquip[i].vAtkPlus > 0 ? (valueOriginal + valueBonusLevel + valueBonusColor) * thisHero.ItemsEquip[i].vAtkPlus / 100f : 0; //% tăng thêm
+                valueOriginal += socketvAtk;
+                var valueBonusPlus = (thisHero.ItemsEquip[i].vAtkPlus + socketvAtkPlus) > 0 ? (valueOriginal + valueBonusLevel + valueBonusColor) * (thisHero.ItemsEquip[i].vAtkPlus + socketvAtkPlus) / 100f : 0; //% tăng thêm
                 vAtkPlus += (valueOriginal + valueBonusLevel + valueBonusColor + valueBonusPlus);
                 //Sát thương phép
                 valueOriginal = thisHero.ItemsEquip[i].vMagic; //Chỉ số gốc
                 valueBonusLevel = (thisHero.ItemsEquip[i].ItemLevel > 0 ? valueOriginal * (thisHero.ItemsEquip[i].ItemLevel * ItemCoreSetting.UpgradePerLevel) / 100f : 0); //Cộng chỉ số theo level
                 valueBonusColor = (thisHero.ItemsEquip[i].ItemColor > 0 ? (valueOriginal + (valueOriginal * (thisHero.ItemsEquip[i].ItemLevel * ItemCoreSetting.UpgradePerLevel) / 100f)) * ((thisHero.ItemsEquip[i].ItemColor * ItemCoreSetting.UpgradePerColor) / 100f) : 0); //Cộng chỉ số theo màu sắc
-                valueBonusPlus = thisHero.ItemsEquip[i].vMagicPlus > 0 ? (valueOriginal + valueBonusLevel + valueBonusColor) * thisHero.ItemsEquip[i].vMagicPlus / 100f : 0; //% tăng thêm
+                valueOriginal += socketvMagic;
+                valueBonusPlus = (thisHero.ItemsEquip[i].vMagicPlus + socketvMagicPlus) > 0 ? (valueOriginal + valueBonusLevel + valueBonusColor) * (thisHero.ItemsEquip[i].vMagicPlus + socketvMagicPlus) / 100f : 0; //% tăng thêm
                 vMagicPlus += (valueOriginal + valueBonusLevel + valueBonusColor + valueBonusPlus);
                 //Máu
                 valueOriginal = thisHero.ItemsEquip[i].vHealth; //Chỉ số gốc
                 valueBonusLevel = (thisHero.ItemsEquip[i].ItemLevel > 0 ? valueOriginal * (thisHero.ItemsEquip[i].ItemLevel * ItemCoreSetting.UpgradePerLevel) / 100f : 0); //Cộng chỉ số theo level
                 valueBonusColor = (thisHero.ItemsEquip[i].ItemColor > 0 ? (valueOriginal + (valueOriginal * (thisHero.ItemsEquip[i].ItemLevel * ItemCoreSetting.UpgradePerLevel) / 100f)) * ((thisHero.ItemsEquip[i].ItemColor * ItemCoreSetting.UpgradePerColor) / 100f) : 0); //Cộng chỉ số theo màu sắc
-                valueBonusPlus = thisHero.ItemsEquip[i].vHealthPlus > 0 ? (valueOriginal + valueBonusLevel + valueBonusColor) * thisHero.ItemsEquip[i].vHealthPlus / 100f : 0; //% tăng thêm
+                valueOriginal += socketvHealth;
+                valueBonusPlus = (thisHero.ItemsEquip[i].vHealthPlus + socketvHealthPlus) > 0 ? (valueOriginal + valueBonusLevel + valueBonusColor) * (thisHero.ItemsEquip[i].vHealthPlus + socketvHealthPlus) / 100f : 0; //% tăng thêm
                 vHealthPlus += (valueOriginal + valueBonusLevel + valueBonusColor + valueBonusPlus);
                 //Năng lượng
                 valueOriginal = thisHero.ItemsEquip[i].vMana; //Chỉ số gốc
                 valueBonusLevel = (thisHero.ItemsEquip[i].ItemLevel > 0 ? valueOriginal * (thisHero.ItemsEquip[i].ItemLevel * ItemCoreSetting.UpgradePerLevel) / 100f : 0); //Cộng chỉ số theo level
                 valueBonusColor = (thisHero.ItemsEquip[i].ItemColor > 0 ? (valueOriginal + (valueOriginal * (thisHero.ItemsEquip[i].ItemLevel * ItemCoreSetting.UpgradePerLevel) / 100f)) * ((thisHero.ItemsEquip[i].ItemColor * ItemCoreSetting.UpgradePerColor) / 100f) : 0); //Cộng chỉ số theo màu sắc
-                valueBonusPlus = thisHero.ItemsEquip[i].vManaPlus > 0 ? (valueOriginal + valueBonusLevel + valueBonusColor) * thisHero.ItemsEquip[i].vManaPlus / 100f : 0; //% tăng thêm
+                valueOriginal += socketvMana;
+                valueBonusPlus = (thisHero.ItemsEquip[i].vManaPlus + socketvManaPlus) > 0 ? (valueOriginal + valueBonusLevel + valueBonusColor) * (thisHero.ItemsEquip[i].vManaPlus + socketvManaPlus) / 100f : 0; //% tăng thêm
                 vManaPlus += (valueOriginal + valueBonusLevel + valueBonusColor + valueBonusPlus);
                 //Giáp
                 valueOriginal = thisHero.ItemsEquip[i].vArmor; //Chỉ số gốc
                 valueBonusLevel = (thisHero.ItemsEquip[i].ItemLevel > 0 ? valueOriginal * (thisHero.ItemsEquip[i].ItemLevel * ItemCoreSetting.UpgradePerLevel) / 100f : 0); //Cộng chỉ số theo level
                 valueBonusColor = (thisHero.ItemsEquip[i].ItemColor > 0 ? (valueOriginal + (valueOriginal * (thisHero.ItemsEquip[i].ItemLevel * ItemCoreSetting.UpgradePerLevel) / 100f)) * ((thisHero.ItemsEquip[i].ItemColor * ItemCoreSetting.UpgradePerColor) / 100f) : 0); //Cộng chỉ số theo màu sắc
-                valueBonusPlus = thisHero.ItemsEquip[i].vArmorPlus > 0 ? (valueOriginal + valueBonusLevel + valueBonusColor) * thisHero.ItemsEquip[i].vArmorPlus / 100f : 0; //% tăng thêm
+                valueOriginal += socketvArmor;
+                valueBonusPlus = (thisHero.ItemsEquip[i].vArmorPlus + socketvArmorPlus) > 0 ? (valueOriginal + valueBonusLevel + valueBonusColor) * (thisHero.ItemsEquip[i].vArmorPlus + socketvArmorPlus) / 100f : 0; //% tăng thêm
                 vArmorPlus += (valueOriginal + valueBonusLevel + valueBonusColor + valueBonusPlus);
                 //Kháng phép
                 valueOriginal = thisHero.ItemsEquip[i].vMagicResist; //Chỉ số gốc
                 valueBonusLevel = (thisHero.ItemsEquip[i].ItemLevel > 0 ? valueOriginal * (thisHero.ItemsEquip[i].ItemLevel * ItemCoreSetting.UpgradePerLevel) / 100f : 0); //Cộng chỉ số theo level
                 valueBonusColor = (thisHero.ItemsEquip[i].ItemColor > 0 ? (valueOriginal + (valueOriginal * (thisHero.ItemsEquip[i].ItemLevel * ItemCoreSetting.UpgradePerLevel) / 100f)) * ((thisHero.ItemsEquip[i].ItemColor * ItemCoreSetting.UpgradePerColor) / 100f) : 0); //Cộng chỉ số theo màu sắc
-                valueBonusPlus = thisHero.ItemsEquip[i].vMagicResistPlus > 0 ? (valueOriginal + valueBonusLevel + valueBonusColor) * thisHero.ItemsEquip[i].vMagicResistPlus / 100f : 0; //% tăng thêm
+                valueOriginal += socketvMagicResist;
+                valueBonusPlus = (thisHero.ItemsEquip[i].vMagicResistPlus + socketvMagicResistPlus) > 0 ? (valueOriginal + valueBonusLevel + valueBonusColor) * (thisHero.ItemsEquip[i].vMagicResistPlus + socketvMagicResistPlus) / 100f : 0; //% tăng thêm
                 vMagicResistPlus += (valueOriginal + valueBonusLevel + valueBonusColor + valueBonusPlus);
 
-                vHealthRegenPlus += thisHero.ItemsEquip[i].vHealthRegen; //Chỉ số hồi máu mỗi giây
-                vManaRegenPlus += thisHero.ItemsEquip[i].vManaRegen; //Chỉ số hồi mana mỗi giây
-                vDamageEarthPlus += thisHero.ItemsEquip[i].vDamageEarth; //Sát thương hệ đất
-                vDamageWaterPlus += thisHero.ItemsEquip[i].vDamageWater; //Sát thương hệ nước
-                vDamageFirePlus += thisHero.ItemsEquip[i].vDamageFire; //Sát thương hệ lửa
-                vDefenseEarthPlus += thisHero.ItemsEquip[i].vDefenseEarth; //Kháng hệ đất
-                vDefenseWaterPlus += thisHero.ItemsEquip[i].vDefenseWater; //Kháng hệ nước
-                vDefenseFirePlus += thisHero.ItemsEquip[i].vDefenseFire; //Kháng hệ hỏa
-                vAtkSpeedPlus += thisHero.ItemsEquip[i].vAtkSpeed; //% Tốc độ tấn công cơ bản tăng thêm
-                vLifeStealPhysicPlus += thisHero.ItemsEquip[i].vLifeStealPhysic; //% hút máu
-                vLifeStealMagicPlus += thisHero.ItemsEquip[i].vLifeStealMagic; //% hút máu phép
-                vLethalityPlus += thisHero.ItemsEquip[i].vLethality; //% Xuyên giáp
-                vMagicPenetrationPlus += thisHero.ItemsEquip[i].vMagicPenetration; //% Xuyên phép
-                vCriticalPlus += thisHero.ItemsEquip[i].vCritical; //% chí mạng
-                vTenacityPlus += thisHero.ItemsEquip[i].vTenacity; //% kháng hiệu ứng
-                vCooldownReductionPlus += thisHero.ItemsEquip[i].vCooldownReduction; //% Giảm tgian hồi chiêu
-                vDamageExcellentPlus += thisHero.ItemsEquip[i].vDamageExcellent; //% Sát thương hoàn hảo (bỏ qua giáp hoặc kháng phép). max = 10%
-                vDefenseExcellentPlus += thisHero.ItemsEquip[i].vDefenseExcellent; //% phong thu hoàn hảo (ko bị đánh trúng). max = 10%
-                vDoubleDamagePlus += thisHero.ItemsEquip[i].vDoubleDamage; //Tỉ lệ x2 đòn đánh max = 10%
-                vTripleDamagePlus += thisHero.ItemsEquip[i].vTripleDamage; //Tỉ lệ x3 đòn đánh max = 10%
-                vDamageReflectPlus += thisHero.ItemsEquip[i].vDamageReflect; //Phản hồi % sát thương. max = 5%
-                vRewardPlusPlus += thisHero.ItemsEquip[i].vRewardPlus; //Tăng lượng vàng rơi ra vào cuối trận. max = 100%}
+                vHealthRegenPlus += thisHero.ItemsEquip[i].vHealthRegen + socketvHealthRegen; //Chỉ số hồi máu mỗi giây
+                vManaRegenPlus += thisHero.ItemsEquip[i].vManaRegen + socketvManaRegen; //Chỉ số hồi mana mỗi giây
+                vDamageEarthPlus += thisHero.ItemsEquip[i].vDamageEarth + socketvDamageEarth; //Sát thương hệ đất
+                vDamageWaterPlus += thisHero.ItemsEquip[i].vDamageWater + socketvDamageWater; //Sát thương hệ nước
+                vDamageFirePlus += thisHero.ItemsEquip[i].vDamageFire + socketvDamageFire; //Sát thương hệ lửa
+                vDefenseEarthPlus += thisHero.ItemsEquip[i].vDefenseEarth + socketvDefenseEarth; //Kháng hệ đất
+                vDefenseWaterPlus += thisHero.ItemsEquip[i].vDefenseWater + socketvDefenseWater; //Kháng hệ nước
+                vDefenseFirePlus += thisHero.ItemsEquip[i].vDefenseFire + socketvDefenseFire; //Kháng hệ hỏa
+                vAtkSpeedPlus += thisHero.ItemsEquip[i].vAtkSpeed + socketvAtkSpeed; //% Tốc độ tấn công cơ bản tăng thêm
+                vLifeStealPhysicPlus += thisHero.ItemsEquip[i].vLifeStealPhysic + socketvLifeStealPhysic; //% hút máu
+                vLifeStealMagicPlus += thisHero.ItemsEquip[i].vLifeStealMagic + socketvLifeStealMagic; //% hút máu phép
+                vLethalityPlus += thisHero.ItemsEquip[i].vLethality + socketvLethality; //% Xuyên giáp
+                vMagicPenetrationPlus += thisHero.ItemsEquip[i].vMagicPenetration + socketvMagicPenetration; //% Xuyên phép
+                vCriticalPlus += thisHero.ItemsEquip[i].vCritical + socketvCritical; //% chí mạng
+                vTenacityPlus += thisHero.ItemsEquip[i].vTenacity + socketvTenacity; //% kháng hiệu ứng
+                vCooldownReductionPlus += thisHero.ItemsEquip[i].vCooldownReduction + socketvCooldownReduction; //% Giảm tgian hồi chiêu
+                vDamageExcellentPlus += thisHero.ItemsEquip[i].vDamageExcellent + socketvDamageExcellent; //% Sát thương hoàn hảo (bỏ qua giáp hoặc kháng phép). max = 10%
+                vDefenseExcellentPlus += thisHero.ItemsEquip[i].vDefenseExcellent + socketvDefenseExcellent; //% phong thu hoàn hảo (ko bị đánh trúng). max = 10%
+                vDoubleDamagePlus += thisHero.ItemsEquip[i].vDoubleDamage + socketvDoubleDamage; //Tỉ lệ x2 đòn đánh max = 10%
+                vTripleDamagePlus += thisHero.ItemsEquip[i].vTripleDamage + socketvTripleDamage; //Tỉ lệ x3 đòn đánh max = 10%
+                vDamageReflectPlus += thisHero.ItemsEquip[i].vDamageReflect + socketvDamageReflect; //Phản hồi % sát thương. max = 5%
+                vRewardPlusPlus += thisHero.ItemsEquip[i].vRewardPlus + socketvRewardPlus; //Tăng lượng vàng rơi ra vào cuối trận. max = 100%
             }
         }
 
         #endregion
+
         DataValues.vAtk += DataValues.vAtkPerLevel * thisHero.Level + vAtkPlus; //Sát thương vật lý
         DataValues.vMagic += DataValues.vMagicPerLevel * thisHero.Level + vMagicPlus; //Sát thương phép thuật
         DataValues.vHealth += DataValues.vHealthPerLevel * thisHero.Level + vHealthPlus; //Máu

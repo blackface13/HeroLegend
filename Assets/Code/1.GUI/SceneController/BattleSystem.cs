@@ -104,6 +104,7 @@ namespace Assets.Code.Controller.SceneController
             GameSystem.RunBGM(1);
             SetupItemUseEquiped();
             ItemDropController.Initialize(); //Khởi tạo item droped
+            ADS.RequestInterstitial();
         }
 
         /// <summary>
@@ -1167,6 +1168,11 @@ namespace Assets.Code.Controller.SceneController
         /// </summary>
         private void SetupInforReward()
         {
+            if (ADS.interstitial.IsLoaded())
+            {
+                ADS.interstitial.Show();
+            }
+
             if (IsWin)
             {
                 DataUserController.User.BattleWin += 1; // + 1 trận thắng

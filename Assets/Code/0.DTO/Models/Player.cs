@@ -34,5 +34,6 @@ namespace Assets.Code._0.DTO.Models
         public int UnoWinRound;
         public int UnoLoseRound;
         public bool IsChangeDevice ;//Biến này xác định có chuyển thiết bị hay ko. = true thì ko cho phép đồng bộ lên, chỉ cho phép đồng bộ xuống, sau khi đồng bộ xuống thì đẩy lại dữ liệu lên và set = false. Nếu = false thì ko phải là trạng thái đăng ký chuyển thiết bị, trùng IDHW mới cho phép đồng bộ
+        public int VoteCode;//Mã vote xác định xem ng chơi đã vote hay chưa để hiển thị
     }
 }

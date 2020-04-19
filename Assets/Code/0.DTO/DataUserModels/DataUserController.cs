@@ -221,16 +221,16 @@ public static class DataUserController
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 6,  5));
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 7,  5));
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 8,  5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 9,  5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 10, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 11, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 12, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 13, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 14, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 15, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 16, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 17, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 18, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 9,  5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 10, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 11, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 12, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 13, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 14, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 15, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 16, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 17, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 18, 5));
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 19, 5));
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 20, 5));
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 21, 5));
@@ -409,8 +409,8 @@ public static class DataUserController
             NumberSpined = 0,
             DifficultMap = new float[7] { 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f },
             EnemyFutureMap = new string[7],
-            Gems = 100,
-            Golds = 1000,
+            Gems = 3000,
+            Golds = 50000,
             HWID = SystemInfo.deviceUniqueIdentifier.ToString(),
             InventorySlot = 100,
             IsAutoBattle = false,

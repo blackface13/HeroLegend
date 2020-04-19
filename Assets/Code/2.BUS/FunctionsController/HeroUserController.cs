@@ -92,6 +92,7 @@ public class HeroUserController : MonoBehaviour {
     /// </summary>
     /// <param name="slotClass"></param>
     public void FilterHero (int slotClass) {
+        GlobalVariables.HeroSlotListSelected.Clear();
         GlobalVariables.HeroSlotListSelected = new List<int> ();
         var listFilter = new List<HeroesProperties> (); //Khởi tảo mảng lọc tạm
         HeroFilter[slotClass] = !HeroFilter[slotClass];
@@ -153,6 +154,8 @@ public class HeroUserController : MonoBehaviour {
             Hero[i].SetActive (false);
         }
         //Hiển thị những hero có trong bộ lọc
+        listFilter = listFilter.OrderBy(x => x.ID).ToList();//Sắp xếp lại theo ID
+
         count = listFilter.Count;
         for (int i = 0; i < count; i++) {
             var index = DataUserController.Heroes.DBHeroes.FindIndex (x => x.ID == listFilter[i].ID);

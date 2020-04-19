@@ -226,6 +226,11 @@ public class Home : MonoBehaviour
                 GameSystem.InitializePrefabUI(9);
                 StartCoroutine(WaitingCloseUI(9)); //Chờ đóng UI
                 break;
+            case 14: //Hiển thị UI Vote
+                HiddenOrShowEffect(false);
+                GameSystem.InitializePrefabUI(13);
+                StartCoroutine(WaitingCloseUI(13)); //Chờ đóng UI
+                break;
             default:
                 break;
         }
@@ -306,6 +311,13 @@ public class Home : MonoBehaviour
             case 12://InputNameCanvasUI
                 yield return new WaitUntil(() => GameSystem.InputNameCanvasUI == null);
                 if (GameSystem.InputNameCanvasUI == null)
+                {
+                    HiddenOrShowEffect(true);
+                }
+                break;
+            case 13://VoteFunctionCanvasUI
+                yield return new WaitUntil(() => GameSystem.VoteFunctionCanvasUI == null);
+                if (GameSystem.VoteFunctionCanvasUI == null)
                 {
                     HiddenOrShowEffect(true);
                 }

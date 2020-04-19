@@ -19,6 +19,7 @@ public static class SyncData {
     /// Server domain (link phải có /formResponse như dưới, thì mới submit dc gg form)
     /// </summary>
     public static readonly string DomainServer = "https://docs.google.com/forms/d/e/1FAIpQLScu7ffkH02-3jyGcvhHM4EMNuZoHBg0FUBVavW4Z_3llk_ZtQ/formResponse";
+    public static readonly string VoteServer = "https://docs.google.com/forms/d/e/1FAIpQLSfaNGpq-DglolyiwyVLohAn9M7V11hv7QCAfELM6H0adFLMPw/formResponse";
     public static string ServerString = "";
     public static readonly string HeroBalanceLink = "https://docs.google.com/forms/d/e/1FAIpQLSc-u0k5VoyDfQEr6y48DY-z7p_PEyQquyef4i9s3fTalR-blQ/formResponse"; //
     //public stat readonlyic string DomainServer = "http://localhost/SvrHL/";
@@ -132,6 +133,25 @@ public static class SyncData {
         }
     }
 
+    /// <summary>
+    /// Vote Chức năng
+    /// </summary>
+    /// <param name="functionName"></param>
+    /// <returns></returns>
+    public static IEnumerator VoteFunction(string functionName)
+    {
+        if (!string.IsNullOrEmpty(DomainServer))
+        {
+            WWWForm form = new WWWForm();
+            form.AddField("entry.379614844", SystemInfo.deviceUniqueIdentifier);
+            form.AddField("entry.2065667801", System.DateTime.Today.ToString());
+            form.AddField("entry.1467281646", functionName);
+            UnityWebRequest www = UnityWebRequest.Post(VoteServer, form);
+            yield return www.SendWebRequest();
+            stat = (www.isNetworkError || www.isHttpError) ? State.LostConnect : State.Success;
+        }
+    }
+
     #endregion
 
     #region Phần admin 
@@ -153,24 +173,4 @@ public static class SyncData {
     }
 
     #endregion
-
-    /// <summary>
-    /// Sync User Data to Server
-    /// </summary>
-    /// <param name="IdUser"></param>
-    /// <param name="DataString"></param>
-    /// <returns></returns>
-    public static IEnumerator Sync (int IdUser, string DataString) {
-        if (DomainServer != "") {
-            WWWForm form = new WWWForm ();
-            form.AddField ("Id", IdUser);
-            form.AddField ("DataString", DataString);
-            UnityWebRequest www = UnityWebRequest.Post (DomainServer + "UpdateUser.php", form);
-            yield return www.SendWebRequest ();
-            if (www.isNetworkError || www.isHttpError)
-                Debug.Log (www.error);
-            else
-                Debug.Log (www.downloadHandler.text);
-        }
-    }
 }

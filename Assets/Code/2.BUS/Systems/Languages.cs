@@ -391,6 +391,15 @@ public static class Languages {
         lang[346] = "Vui lòng nhập tên";
         lang[347] = "Tên không được chứa ký tự đặc biệt";
 
+        //Vote setup
+        lang[348] = "Bạn muốn chức năng gì sẽ xuất hiện trong phiên bản tiếp theo";
+        lang[349] = "Bầu chọn";
+        lang[350] = "Chatbox";
+        lang[351] = "Chatbox là chức năng giúp bạn có thể trò chuyện giữa những người chơi cùng nhau, tuy đây là trò chơi offline, nhưng chức năng chatbox sẽ yêu cầu thiết bị của bạn phải được kết nối internet";
+        lang[352] = "Thêm nhân vật mới";
+        lang[353] = "Thêm một nhân vật mới bổ sung vào danh sách";
+        lang[354] = "Cám ơn bình chọn của bạn";
+
         //Thông tin chỉ số
         lang[700] = "+{0} Sát thương vật lý";
         lang[701] = "+{0} Sức mạnh phép thuật";
@@ -1800,6 +1809,14 @@ public static class Languages {
         lang[345] = "Fast get card";
         lang[346] = "Please input your name";
         lang[347] = "Your name has special character";
+        //Vote setup
+        lang[348] = "What function you want see in the next version?";
+        lang[349] = "Vote";
+        lang[350] = "Chatbox";
+        lang[351] = "Chatbox allows you to chat with everyone, requires your device to connect to the internet";
+        lang[352] = "Add 1 new hero";
+        lang[353] = "Add 1 new hero to list";
+        lang[354] = "Thanks for your vote";
 
         //Thông tin chỉ số
         lang[700] = "+{0} Attack physic";
