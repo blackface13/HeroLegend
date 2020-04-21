@@ -399,6 +399,8 @@ public static class Languages {
         lang[352] = "Thêm nhân vật mới";
         lang[353] = "Thêm một nhân vật mới bổ sung vào danh sách";
         lang[354] = "Cám ơn bình chọn của bạn";
+        //=============================================
+        lang[355] = "Có vẻ như đây là lần đầu tiên chơi game, bạn có muốn một chút hướng dẫn?";
 
         //Thông tin chỉ số
         lang[700] = "+{0} Sát thương vật lý";
@@ -1817,6 +1819,8 @@ public static class Languages {
         lang[352] = "Add 1 new hero";
         lang[353] = "Add 1 new hero to list";
         lang[354] = "Thanks for your vote";
+        //=============================================
+        lang[355] = "It seems this is the first time play, do you want a little tutorial?";
 
         //Thông tin chỉ số
         lang[700] = "+{0} Attack physic";

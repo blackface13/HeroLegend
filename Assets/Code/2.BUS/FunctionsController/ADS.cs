@@ -92,7 +92,11 @@ public static class ADS
 
     public static void ShowBanner()
     {
-        bannerView.Show();
+        try
+        {
+            bannerView.Show();
+        }
+        catch { }
     }
 
     #endregion

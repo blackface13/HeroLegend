@@ -73,20 +73,28 @@ namespace Controller.Hero8
         /// Xử lý va chạm
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if ((Hero.Team.Equals(0) && col.gameObject.layer.Equals(Module.BASELAYERRIGID2D[2])) || (Hero.Team.Equals(1) && col.gameObject.layer.Equals(Module.BASELAYERRIGID2D[1])))
+            try
             {
-            //Thiết lập âm thanh va chamj
-            if (GameSystem.Settings.SoundEnable) {
-                var rand = UnityEngine.Random.Range (1, SoundClip.Length);
-                StartCoroutine (Battle.PlaySound (SoundClip[rand], 0));
-            }
-                CheckExistAndCreateEffectExtension(col.transform.position, EffectExtension);//Hiển thị hiệu ứng trúng đòn lên đối phương
-                if (CollisionType.Equals(0))//Nếu kiểu va chạm rồi ẩn
+                if ((Hero.Team.Equals(0) && col.gameObject.layer.Equals(Module.BASELAYERRIGID2D[2])) || (Hero.Team.Equals(1) && col.gameObject.layer.Equals(Module.BASELAYERRIGID2D[1])))
                 {
-                    Expired = true;
-                    StartCoroutine(ParticleStop(gameObject, EffectParticle, .7f));
+                    //Thiết lập âm thanh va chamj
+                    if (GameSystem.Settings.SoundEnable)
+                    {
+                        var rand = UnityEngine.Random.Range(1, SoundClip.Length);
+                        StartCoroutine(Battle.PlaySound(SoundClip[rand], 0));
+                    }
+                    CheckExistAndCreateEffectExtension(col.transform.position, EffectExtension);//Hiển thị hiệu ứng trúng đòn lên đối phương
+                    if (CollisionType.Equals(0))//Nếu kiểu va chạm rồi ẩn
+                    {
+                        Expired = true;
+                        StartCoroutine(ParticleStop(gameObject, EffectParticle, .7f));
+                    }
+                    //Hide(this.gameObject);//Ẩn object sau khi va chạm 
                 }
-                //Hide(this.gameObject);//Ẩn object sau khi va chạm 
+            }
+            catch
+            {
+
             }
         }
 

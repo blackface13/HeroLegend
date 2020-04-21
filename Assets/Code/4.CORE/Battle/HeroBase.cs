@@ -206,7 +206,7 @@ public class HeroBase : MonoBehaviour
                 var socketvDamageReflect = 0f;
                 var socketvRewardPlus = 0f;
 
-                if (thisHero.ItemsEquip[i].SocketIDs.Count > 0)
+                if (thisHero.ItemsEquip[i].SocketIDs != null && thisHero.ItemsEquip[i].SocketIDs.Count > 0)
                 {
                     socketvAtk = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vAtk);
                     socketvAtkPlus = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vAtkPlus);
@@ -220,6 +220,29 @@ public class HeroBase : MonoBehaviour
                     socketvArmorPlus = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vArmorPlus);
                     socketvMagicResist = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vMagicResist);
                     socketvMagicResistPlus = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vMagicResistPlus);
+
+                    socketvHealthRegen = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vHealthRegen);
+                    socketvManaRegen = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vManaRegen);
+                    socketvDamageEarth = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vDamageEarth);
+                    socketvDamageWater = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vDamageWater);
+                    socketvDamageFire = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vDamageFire);
+                    socketvDefenseEarth = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vDefenseEarth);
+                    socketvDefenseWater = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vDefenseWater);
+                    socketvDefenseFire = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vDefenseFire);
+                    socketvAtkSpeed = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vAtkSpeed);
+                    socketvLifeStealPhysic = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vLifeStealPhysic);
+                    socketvLifeStealMagic = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vLifeStealMagic);
+                    socketvLethality = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vLethality);
+                    socketvMagicPenetration = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vMagicPenetration);
+                    socketvCritical = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vCritical);
+                    socketvTenacity = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vTenacity);
+                    socketvCooldownReduction = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vCooldownReduction);
+                    socketvDamageExcellent = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vDamageExcellent);
+                    socketvDefenseExcellent = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vDefenseExcellent);
+                    socketvDoubleDamage = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vDoubleDamage);
+                    socketvTripleDamage = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vTripleDamage);
+                    socketvDamageReflect = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vDamageReflect);
+                    socketvRewardPlus = thisHero.ItemsEquip[i].Sockets.Sum(x => x.vRewardPlus);
                 }
                 #endregion
 

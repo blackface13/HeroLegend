@@ -54,7 +54,12 @@ public class Home : MonoBehaviour
             GameSystem.InitializePrefabUI(12);
             StartCoroutine(WaitingCloseUI(12));
         }
-        //RunTutorial();
+        
+        //Hiển thị câu hỏi hướng dẫn
+        if(!GameSystem.Settings.Tutorial)
+        {
+            GameSystem.ControlFunctions.ShowMessage(Languages.lang[355]);
+        }
     }
 
     /// <summary>

@@ -140,6 +140,7 @@ public class HeroDetailController : MonoBehaviour
                 var socketvArmorPlus = 0f;
                 var socketvMagicResist = 0f;
                 var socketvMagicResistPlus = 0f;
+
                 var socketvHealthRegen = 0f;
                 var socketvManaRegen = 0f;
                 var socketvDamageEarth = 0f;
@@ -163,7 +164,7 @@ public class HeroDetailController : MonoBehaviour
                 var socketvDamageReflect = 0f;
                 var socketvRewardPlus = 0f;
 
-                if (DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].SocketIDs.Count > 0)
+                if (DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].SocketIDs != null && DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].SocketIDs.Count > 0)
                 {
                     socketvAtk = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vAtk);
                     socketvAtkPlus = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vAtkPlus);
@@ -177,6 +178,29 @@ public class HeroDetailController : MonoBehaviour
                     socketvArmorPlus = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vArmorPlus);
                     socketvMagicResist = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vMagicResist);
                     socketvMagicResistPlus = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vMagicResistPlus);
+
+                    socketvHealthRegen = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vHealthRegen);
+                    socketvManaRegen = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vManaRegen);
+                    socketvDamageEarth = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vDamageEarth);
+                    socketvDamageWater = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vDamageWater);
+                    socketvDamageFire = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vDamageFire);
+                    socketvDefenseEarth = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vDefenseEarth);
+                    socketvDefenseWater = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vDefenseWater);
+                    socketvDefenseFire = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vDefenseFire);
+                    socketvAtkSpeed = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vAtkSpeed);
+                    socketvLifeStealPhysic = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vLifeStealPhysic);
+                    socketvLifeStealMagic = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vLifeStealMagic);
+                    socketvLethality = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vLethality);
+                    socketvMagicPenetration = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vMagicPenetration);
+                    socketvCritical = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vCritical);
+                    socketvTenacity = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vTenacity);
+                    socketvCooldownReduction = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vCooldownReduction);
+                    socketvDamageExcellent = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vDamageExcellent);
+                    socketvDefenseExcellent = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vDefenseExcellent);
+                    socketvDoubleDamage = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vDoubleDamage);
+                    socketvTripleDamage = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vTripleDamage);
+                    socketvDamageReflect = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vDamageReflect);
+                    socketvRewardPlus = DataUserController.Heroes.DBHeroes[slotHero].ItemsEquip[i].Sockets.Sum(x => x.vRewardPlus);
                 }
                 #endregion
 
