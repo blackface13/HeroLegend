@@ -942,7 +942,6 @@ public static class GameSystem
     }
     #endregion
 
-
     /// <summary>
     /// Check ký tự đặc biệt
     /// </summary>

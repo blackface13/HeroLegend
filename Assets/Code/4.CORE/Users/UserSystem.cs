@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class UserSystem
 {
-
+    public static readonly int GemsDefault = 3000;//Giá trị gem khi tạo acc
+    public static readonly int GoldsDefault = 50000;//Giá trị gold khi tạo acc
     /// <summary>
     /// Kiểm tra số lượng đá quý
     /// </summary>
@@ -14,6 +15,7 @@ public class UserSystem
         {
             return true;
         }
+        GameSystem.ControlFunctions.ShowMessage(Languages.lang[250]);//"Bạn không đủ đá quý";
         return false;
     }
 
@@ -26,6 +28,7 @@ public class UserSystem
         {
             return true;
         }
+        GameSystem.ControlFunctions.ShowMessage(Languages.lang[304]);//"Bạn không đủ vàng";
         return false;
     }
 
@@ -48,12 +51,8 @@ public class UserSystem
     {
         try
         {
-            if (CheckGolds(quantity))
-            {
-                DataUserController.User.Golds -= quantity;
-                return true;
-            }
-            return false;
+            DataUserController.User.Golds -= quantity;
+            return true;
         }
         catch
         {
@@ -68,12 +67,8 @@ public class UserSystem
     {
         try
         {
-            if (CheckGems(quantity))
-            {
-                DataUserController.User.Gems -= quantity;
-                return true;
-            }
-            return false;
+            DataUserController.User.Gems -= quantity;
+            return true;
         }
         catch
         {

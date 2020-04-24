@@ -338,7 +338,7 @@ public static class Languages {
         lang[301] = "Ngọc đã bị phá hủy";
         lang[302] = "Lỗ";
         lang[303] = "Không thể đục lỗ";
-        lang[304] = "Không đủ vàng";
+        lang[304] = "Bạn không đủ vàng";
         lang[305] = "Tháp địa ngục";
         lang[306] = "Xác nhận rời khỏi màn chơi?";
         lang[307] = "Bạn cần chọn 1 lá bài hoặc bỏ lượt";
@@ -401,6 +401,10 @@ public static class Languages {
         lang[354] = "Cám ơn bình chọn của bạn";
         //=============================================
         lang[355] = "Có vẻ như đây là lần đầu tiên chơi game, bạn có muốn một chút hướng dẫn?";
+        lang[356] = "Mua";
+        lang[357] = "Mua thành công";
+        lang[358] = "Mở rộng 1 ô trống trong thùng đồ với {0} đá quý?";
+        lang[359] = "Túi đồ +1 ô";
 
         //Thông tin chỉ số
         lang[700] = "+{0} Sát thương vật lý";
@@ -1821,6 +1825,10 @@ public static class Languages {
         lang[354] = "Thanks for your vote";
         //=============================================
         lang[355] = "It seems this is the first time play, do you want a little tutorial?";
+        lang[356] = "Buy";
+        lang[357] = "Buy successfully";
+        lang[358] = "Add 1 inventory slot with {0} gems?";
+        lang[359] = "Inventory slot +1";
 
         //Thông tin chỉ số
         lang[700] = "+{0} Attack physic";

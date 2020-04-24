@@ -121,13 +121,12 @@ public class WorldMap : MonoBehaviour {
         yield return new WaitUntil (() => GameSystem.ConfirmBoxResult != 0);
         //Accept
         if (GameSystem.ConfirmBoxResult == 1) {
-            if (DataUserController.User.Gems < Module.GemsForHireAssassin)
-                GameSystem.ControlFunctions.ShowMessage( (Languages.lang[250]));
-            else {
-                DataUserController.User.Gems -= Module.GemsForHireAssassin; //Trừ gems
-                BattleCore.ChangeDifficult (1, Module.WorldMapRegionSelected); //Giảm độ khó của map hiện tại
-                DataUserController.SaveUserInfor (); //Lưu thông tin user
-                GameSystem.ControlFunctions.ShowMessage( (Languages.lang[251])); //Thông báo thuê sát thủ thành công
+            if(UserSystem.CheckGems((float)Module.GemsForHireAssassin))
+            {
+                UserSystem.DecreaseGems((float)Module.GemsForHireAssassin);
+                BattleCore.ChangeDifficult(1, Module.WorldMapRegionSelected); //Giảm độ khó của map hiện tại
+                DataUserController.SaveUserInfor(); //Lưu thông tin user
+                GameSystem.ControlFunctions.ShowMessage((Languages.lang[251])); //Thông báo thuê sát thủ thành công
             }
         }
     }

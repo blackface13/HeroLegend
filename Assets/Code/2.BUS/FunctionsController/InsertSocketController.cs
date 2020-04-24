@@ -653,7 +653,6 @@ public class InsertSocketController : MonoBehaviour {
                 //Check vàng
                 var goldRequired = SocketCoreSetting.GetGoldsRequiredInsertSocket (ItemEquipSelected);
                 if (!UserSystem.CheckGolds (goldRequired)) {
-                    GameSystem.ControlFunctions.ShowMessage (Languages.lang[304]); //Không đủ vàng
                     return false;
                 }
                 break;
@@ -668,7 +667,6 @@ public class InsertSocketController : MonoBehaviour {
                 //Check gem
                 var gemsRequired = SocketCoreSetting.GetGemsRequiredCreateSocket (ItemEquipSelected);
                 if (!UserSystem.CheckGems (gemsRequired)) {
-                    GameSystem.ControlFunctions.ShowMessage (Languages.lang[250]); //Không đủ đá quý
                     return false;
                 }
 

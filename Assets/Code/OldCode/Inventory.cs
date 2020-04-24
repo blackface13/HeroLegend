@@ -1044,29 +1044,6 @@ public class Inventory : MonoBehaviour {
     }
 
     /// <summary>
-    /// Button mở rộng thêm thùng đồ bằng việc xem video
-    /// </summary>
-    public void WatchADSForSlotInventory () {
-        if (ADS.rewardBasedVideoSlotInventory.IsLoaded ()) {
-            GameSystem.ShowConfirmDialog (Languages.lang[180]); //Xác nhận xem video
-            StartCoroutine (WaitConfirmWatchVideo ());
-        } else
-            GameSystem.ControlFunctions.ShowMessage ((Languages.lang[181])); //Chờ video tiếp theo dc tải
-    }
-
-    /// <summary>
-    /// Chờ thực hiện chọn xem video
-    /// </summary>
-    /// <returns></returns>
-    private IEnumerator WaitConfirmWatchVideo () {
-        yield return new WaitUntil (() => GameSystem.ConfirmBoxResult != 0);
-        //Accept
-        if (GameSystem.ConfirmBoxResult == 1) {
-            ADS.rewardBasedVideoSlotInventory.Show (); //Hiển thị video quảng cáo
-        }
-    }
-
-    /// <summary>
     /// Button function lẻ tẻ
     /// </summary>
     /// <param name="type">0: hiển thị UI xem video nhận vàng, gem. 1: refresh vàng và gem</param>

@@ -7,6 +7,11 @@ using UnityEngine;
 /// </summary>
 public static class InventorySystem {
 
+    public static readonly int SlotInventoryDefault = 30;//Slot inventory khi khởi tạo acc mới
+    public static readonly int SlotInventoryFirstPrice = 10;//
+    public static readonly bool IsUpGemWhenUpSlot = true;//Giá trị sau mỗi lần + 1 ô có tăng lên hay không
+    public static readonly int PricePerSlot = 10;//Giá trị tăng lên sau mỗi lần +1 ô
+
     /// <summary>
     /// Thêm item use hoặc quest vào thùng đồ, không check vượt slot
     /// </summary>
@@ -123,5 +128,13 @@ public static class InventorySystem {
             return true;
 
         return false;
+    }
+
+    /// <summary>
+    /// Tính giá gem khi mua slot inventory
+    /// </summary>
+    public static double GetPriceBuySlotInventory()
+    {
+        return (DataUserController.User.InventorySlot - SlotInventoryDefault) * (IsUpGemWhenUpSlot ? PricePerSlot : 0) + SlotInventoryFirstPrice;
     }
 }

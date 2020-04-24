@@ -1216,16 +1216,13 @@ namespace Assets.Code._2.BUS.FunctionsController
                     if (IsControl)
                     {
                         //Trừ tiền cược khi bắt đầu ván chơi
-                        if (UserSystem.DecreaseGolds(UnoCardSystem.BetLevel[UnoCardSystem.BetLevelSlot]))
+                        if (UserSystem.CheckGolds(UnoCardSystem.BetLevel[UnoCardSystem.BetLevelSlot]))
                         {
                             ResetVariables();
                             SetupNewBattle();
                             ObjController[17].SetActive(false);
+                            UserSystem.DecreaseGolds(UnoCardSystem.BetLevel[UnoCardSystem.BetLevelSlot]);
                             DataUserController.SaveUserInfor();
-                        }
-                        else
-                        {
-                            GameSystem.ControlFunctions.ShowMessage(Languages.lang[304]);// = "Không đủ vàng"
                         }
                     }
                     break;
