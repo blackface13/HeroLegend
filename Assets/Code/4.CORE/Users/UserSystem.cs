@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text;
 
 public class UserSystem
 {
@@ -47,11 +48,13 @@ public class UserSystem
     /// <summary>
     /// Giảm trừ vàng
     /// </summary>
-    public static bool DecreaseGolds(float quantity)
+    public static bool DecreaseGolds(float quantity, bool showMessage)
     {
         try
         {
             DataUserController.User.Golds -= quantity;
+            if (showMessage)
+            GameSystem.ControlFunctions.ShowMessage(new StringBuilder("- ").Append(quantity.ToString()).Append(Languages.lang[276]).ToString());
             return true;
         }
         catch
@@ -63,11 +66,13 @@ public class UserSystem
     /// <summary>
     /// Giảm trừ đá quý
     /// </summary>
-    public static bool DecreaseGems(float quantity)
+    public static bool DecreaseGems(float quantity, bool showMessage)
     {
         try
         {
             DataUserController.User.Gems -= quantity;
+            if (showMessage)
+            GameSystem.ControlFunctions.ShowMessage(new StringBuilder("- ").Append(quantity.ToString()).Append(Languages.lang[277]).ToString());
             return true;
         }
         catch
@@ -79,12 +84,14 @@ public class UserSystem
     /// <summary>
     /// Giảm trừ tiền tệ
     /// </summary>
-    public static bool DecreaseGoldsGems(float goldsQuantity, float gemsQuantity)
+    public static bool DecreaseGoldsGems(float goldsQuantity, float gemsQuantity, bool showMessage)
     {
         try
         {
             DataUserController.User.Golds -= goldsQuantity;
             DataUserController.User.Gems -= gemsQuantity;
+            if (showMessage)
+            GameSystem.ControlFunctions.ShowManyMessage(new string[] { new StringBuilder("- ").Append(goldsQuantity.ToString()).Append(Languages.lang[276]).ToString(), new StringBuilder("- ").Append(gemsQuantity.ToString()).Append(Languages.lang[277]).ToString() });
             return true;
         }
         catch
@@ -96,11 +103,13 @@ public class UserSystem
     /// <summary>
     /// Cộng golds cho user
     /// </summary>
-    public static bool IncreaseGolds(float quantity)
+    public static bool IncreaseGolds(float quantity, bool showMessage)
     {
         try
         {
             DataUserController.User.Golds += quantity;
+            if (showMessage)
+            GameSystem.ControlFunctions.ShowMessage(new StringBuilder("+ ").Append(quantity.ToString()).Append(Languages.lang[276]).ToString());
             return true;
         }
         catch
@@ -112,11 +121,13 @@ public class UserSystem
     /// <summary>
     /// Cộng gems cho user
     /// </summary>
-    public static bool IncreaseGems(float quantity)
+    public static bool IncreaseGems(float quantity, bool showMessage)
     {
         try
         {
             DataUserController.User.Gems += quantity;
+            if (showMessage)
+                GameSystem.ControlFunctions.ShowMessage(new StringBuilder("+ ").Append(quantity.ToString()).Append(Languages.lang[277]).ToString());
             return true;
         }
         catch
@@ -128,12 +139,14 @@ public class UserSystem
     /// <summary>
     /// Cộng tiền tệ cho user
     /// </summary>
-    public static bool IncreaseGoldsGems(float goldsQuantity, float gemsQuantity)
+    public static bool IncreaseGoldsGems(float goldsQuantity, float gemsQuantity, bool showMessage)
     {
         try
         {
             DataUserController.User.Golds += goldsQuantity;
             DataUserController.User.Gems += gemsQuantity;
+            if(showMessage)
+            GameSystem.ControlFunctions.ShowManyMessage(new string[] { new StringBuilder("+ ").Append(goldsQuantity.ToString()).Append(Languages.lang[276]).ToString(), new StringBuilder("+ ").Append(gemsQuantity.ToString()).Append(Languages.lang[277]).ToString() });
             return true;
         }
         catch

@@ -21,7 +21,8 @@ namespace Assets.Code._0.DTO.Models
         public string ItemUseForBattle ;
         public bool IsAutoBattle ;
         public string[] EnemyFutureMap ;
-        public float[] DifficultMap ;
+        public int[] LevelMap;//Số màn chơi mà 7 map đang chơi
+        //public float[] DifficultMap ;
         public double LastUpdate ;
         public string HWID ;
         public byte UnoBGColorR = 5;

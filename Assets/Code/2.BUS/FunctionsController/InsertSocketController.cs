@@ -578,7 +578,7 @@ public class InsertSocketController : MonoBehaviour {
                                 //}
 
                                 //Trừ vàng, save data
-                                UserSystem.DecreaseGolds (goldRequired);
+                                UserSystem.DecreaseGolds (goldRequired, true);
                                 DataUserController.SaveUserInfor ();
                             } else {
                                 GameSystem.ControlFunctions.ShowMessage (Languages.lang[296]); //Không thể khảm
@@ -598,7 +598,7 @@ public class InsertSocketController : MonoBehaviour {
 
                                 //Trừ item
                                 InventorySystem.ReduceItemQuantityInventory ((sbyte) ItemCoreSetting.CreateSocketItemType, (byte) ItemCoreSetting.CreateSocketItemID, quantityRequired);
-                                UserSystem.DecreaseGems (gemsRequired);
+                                UserSystem.DecreaseGems (gemsRequired, false);
 
                                 //Lưu dữ liệu
                                 DataUserController.SaveInventory ();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StartApp;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,7 @@ public class InventoryController : MonoBehaviour
     [Header("Draw Curve")]
     public AnimationCurve moveCurve;
     public Slider SliderItemSell;
+    InterstitialAd VideoGemReward;
     #endregion
 
     // Start is called before the first frame update
@@ -58,11 +60,29 @@ public class InventoryController : MonoBehaviour
         StartCoroutine(SetupInventory()); //Khởi tạo inventory
         StartCoroutine(SetupAddItems()); //Vẽ item lên màn hình
         ButtonRefreshInventory(null);
+        SetupADS();
     }
 
     #region Inventory Functions 
 
     #region Khởi tạo 
+
+    /// <summary>
+    /// Cài đặt quảng cáo
+    /// </summary>
+    private void SetupADS()
+    {
+        //Tạo video
+        VideoGemReward = AdSdk.Instance.CreateInterstitial();
+        VideoGemReward.RaiseAdVideoCompleted += (sender, e) =>
+        {
+            DataUserController.User.InventorySlot += 1;
+            DataUserController.SaveUserInfor();
+            GameSystem.ControlFunctions.ShowMessage(Languages.lang[359]);// "Túi đồ +1 ô";
+            VideoGemReward.LoadAd(InterstitialAd.AdType.Rewarded);
+        };
+        VideoGemReward.LoadAd(InterstitialAd.AdType.Rewarded);
+    }
 
     /// <summary>
     /// Gán ngôn ngữ vào các text
@@ -734,7 +754,7 @@ public class InventoryController : MonoBehaviour
                 else
                     InventorySystem.RemoveItem(InventoryTemplate[ItemSlotViewing]);
             }
-            UserSystem.IncreaseGolds(price); //Cộng vàng sau khi bán
+            UserSystem.IncreaseGolds(price, true); //Cộng vàng sau khi bán
             DataUserController.SaveUserInfor();
             RemoveCheckItem();
             if (type.Equals(0))
@@ -1023,13 +1043,28 @@ public class InventoryController : MonoBehaviour
                 {
                     if (UserSystem.CheckGems((float)InventorySystem.GetPriceBuySlotInventory()))
                     {
-                        UserSystem.DecreaseGems((float)InventorySystem.GetPriceBuySlotInventory());
+                        UserSystem.DecreaseGems((float)InventorySystem.GetPriceBuySlotInventory(), false);
                         DataUserController.User.InventorySlot += 1;
                         DataUserController.SaveUserInfor();
                         GameSystem.ControlFunctions.ShowMessage(Languages.lang[359]);// "Túi đồ +1 ô";
                     }
                     else
                         GameSystem.ControlFunctions.ShowMessage(Languages.lang[250]);//"Bạn không đủ đá quý";
+                }
+                break;
+            case 3://Xem video nhận thưởng
+                //Chờ thao tác từ use
+                yield return new WaitUntil(() => GameSystem.ConfirmBoxResult != 0);
+
+                //Xác nhận đồng ý
+                if (GameSystem.ConfirmBoxResult == 1)
+                {
+                    if (VideoGemReward.IsReady())
+                    {
+                        VideoGemReward.ShowAd(); //Hiển thị video quảng cáo
+                    }
+                    else
+                        GameSystem.ControlFunctions.ShowMessage((Languages.lang[181])); //Chờ video tiếp theo dc tải
                 }
                 break;
             default:
@@ -1042,8 +1077,12 @@ public class InventoryController : MonoBehaviour
     /// </summary>
     public void ButtonBuySlotInventory()
     {
-        GameSystem.ShowConfirmDialog(string.Format(Languages.lang[358], InventorySystem.GetPriceBuySlotInventory()));
-        StartCoroutine(WaitingForActions(2));
+        //Mua bằng gems
+        //GameSystem.ShowConfirmDialog(string.Format(Languages.lang[358], InventorySystem.GetPriceBuySlotInventory()));
+        //StartCoroutine(WaitingForActions(2));
+        //Xem video nhận slot
+        GameSystem.ShowConfirmDialog(Languages.lang[182]);
+        StartCoroutine(WaitingForActions(3));
     }
     #endregion
 

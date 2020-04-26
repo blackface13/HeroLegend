@@ -12,7 +12,7 @@ public class SceneLoad : MonoBehaviour {
     public void Change_scene (string scn_name) {
         if (GameSystem.ControlActive) {
             try {
-                ADS.HideBanner ();
+                //ADS.HideBanner ();
             } catch { }
             //Nếu vào trận đấu thì check điều kiện đủ 3 nhân vật trong team
             if ((scn_name.Equals ("BattleSystem")) && (DataUserController.Team.Split (';') [0] == "0" || DataUserController.Team.Split (';') [1] == "0" || DataUserController.Team.Split (';') [2] == "0")) {

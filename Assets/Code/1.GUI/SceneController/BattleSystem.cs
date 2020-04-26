@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 using System.Linq;
 using BlackCore;
+using StartApp;
 using UnityEngine;
 using UnityEngine.UI;
 namespace Assets.Code.Controller.SceneController
@@ -59,6 +60,7 @@ namespace Assets.Code.Controller.SceneController
         public AudioSource BGM;
         //=========================
 
+        InterstitialAd ADSInters;
         #endregion
 
         #region Initialize 
@@ -104,7 +106,14 @@ namespace Assets.Code.Controller.SceneController
             GameSystem.RunBGM(1);
             SetupItemUseEquiped();
             ItemDropController.Initialize(); //Khởi tạo item droped
-            ADS.RequestInterstitial();
+
+            //Quảng cáo xen kẽ
+            ADSInters = AdSdk.Instance.CreateInterstitial();
+            ADSInters.RaiseAdLoaded += (sender, e) =>
+            {
+                //ADSInters.ShowAd("adTagIfNeeded");
+            };
+            ADSInters.LoadAd(InterstitialAd.AdType.Automatic);
         }
 
         /// <summary>
@@ -267,9 +276,9 @@ namespace Assets.Code.Controller.SceneController
             Team2[0].GetComponent<HeroBase>().Team = 1;
 
             //Thêm item trang bị cho enemy
-            Team2[0].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.DifficultMap[Module.WorldMapRegionSelected], 0, 0, 1));
-            Team2[0].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.DifficultMap[Module.WorldMapRegionSelected], 0, 0, 1));
-            Team2[0].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.DifficultMap[Module.WorldMapRegionSelected], 0, 0, 1));
+            Team2[0].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.LevelMap[Module.WorldMapRegionSelected]/10f, 0, 0, 1));
+            Team2[0].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.LevelMap[Module.WorldMapRegionSelected]/10f, 0, 0, 1));
+            Team2[0].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.LevelMap[Module.WorldMapRegionSelected] / 10f, 0, 0, 1));
             Team2[0].GetComponent<HeroBase>().RefreshTeam(Team2[0]);
             // //----------------------------
             //Team2[1] = Instantiate (Resources.Load<GameObject> (BattleCore.HeroObjectLink + "Hero" + (Module.BattleModeSelected.Equals (0) ? listEnemy[1].ToString () : BattleCore.HeroIDLine2[UnityEngine.Random.Range (0, BattleCore.HeroIDLine2.Count)].ToString ())), new Vector3 (0 + Camera.main.aspect * 7f, BattleCore.DefaultVectorY, 0), Quaternion.identity);
@@ -277,9 +286,9 @@ namespace Assets.Code.Controller.SceneController
             Team2[1].GetComponent<HeroBase>().Team = 1;
 
             // //Thêm item trang bị cho enemy
-            Team2[1].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.DifficultMap[Module.WorldMapRegionSelected], 0, 0, 1));
-            Team2[1].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.DifficultMap[Module.WorldMapRegionSelected], 0, 0, 1));
-            Team2[1].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.DifficultMap[Module.WorldMapRegionSelected], 0, 0, 1));
+            Team2[1].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.LevelMap[Module.WorldMapRegionSelected]/10f, 0, 0, 1));
+            Team2[1].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.LevelMap[Module.WorldMapRegionSelected]/10f, 0, 0, 1));
+            Team2[1].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.LevelMap[Module.WorldMapRegionSelected] / 10f, 0, 0, 1));
             Team2[1].GetComponent<HeroBase>().RefreshTeam(Team2[1]);
             // //----------------------------
             //Team2[2] = Instantiate (Resources.Load<GameObject> (BattleCore.HeroObjectLink + "Hero" + (Module.BattleModeSelected.Equals (0) ? listEnemy[2].ToString () : BattleCore.HeroIDLine1[UnityEngine.Random.Range (0, BattleCore.HeroIDLine1.Count)].ToString ())), new Vector3 (0 + Camera.main.aspect * 3f, BattleCore.DefaultVectorY, 0), Quaternion.identity);
@@ -287,9 +296,9 @@ namespace Assets.Code.Controller.SceneController
             Team2[2].GetComponent<HeroBase>().Team = 1;
 
             // //Thêm item trang bị cho enemy
-            Team2[2].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.DifficultMap[Module.WorldMapRegionSelected], 0, 0, 1));
-            Team2[2].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.DifficultMap[Module.WorldMapRegionSelected], 0, 0, 1));
-            Team2[2].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.DifficultMap[Module.WorldMapRegionSelected], 0, 0, 1));
+            Team2[2].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.LevelMap[Module.WorldMapRegionSelected]/10f, 0, 0, 1));
+            Team2[2].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.LevelMap[Module.WorldMapRegionSelected]/10f, 0, 0, 1));
+            Team2[2].GetComponent<HeroBase>().ItemsEnemy.Add(ItemSystem.CreateItem(true, true, DataUserController.User.LevelMap[Module.WorldMapRegionSelected] / 10f, 0, 0, 1));
             Team2[2].GetComponent<HeroBase>().RefreshTeam(Team2[2]);
             //----------------------------
             //Team 1
@@ -430,7 +439,7 @@ namespace Assets.Code.Controller.SceneController
                 Time.timeScale = 1f;
                 GameSystem.StopBGM(); //Dừng nhạc nền 
                 DataUserController.User.BattleLose += 1; //Thoát game giữa chừng sẽ + 1 trận thua
-                BattleCore.ChangeDifficult(0, Module.WorldMapRegionSelected);
+                //BattleCore.ChangeDifficult(0, Module.WorldMapRegionSelected);
                 DataUserController.SaveUserInfor();
                 var sceneload = new SceneLoad();
                 sceneload.Change_scene("Room");
@@ -1168,9 +1177,15 @@ namespace Assets.Code.Controller.SceneController
         /// </summary>
         private void SetupInforReward()
         {
-            if (ADS.interstitial.IsLoaded())
+            //if (ADS.interstitial.IsLoaded())
+            //{
+            //    ADS.interstitial.Show();
+            //}
+
+            //Hiển thị quảng cáo sau trận
+            if (ADSInters.IsReady())
             {
-                ADS.interstitial.Show();
+                ADSInters.ShowAd();
             }
 
             if (IsWin)
@@ -1193,7 +1208,7 @@ namespace Assets.Code.Controller.SceneController
             var h2 = DataUserController.Heroes.DBHeroes.Find(x => x.ID == Hero[1].HeroID);
             var h3 = DataUserController.Heroes.DBHeroes.Find(x => x.ID == Hero[2].HeroID);
             //Tính lượng vàng mà user nhận dc dựa trên sát thương gây ra + tỉ lệ vàng
-            var goldReward = (int)((expH1 + expH2 + expH3) / 3 + DataUserController.User.DifficultMap[Module.WorldMapRegionSelected] * 136);
+            var goldReward = (int)((expH1 + expH2 + expH3) / 3 + DataUserController.User.LevelMap[Module.WorldMapRegionSelected] / 10f * 136);
             goldReward += goldReward * (int)(Team1[0].GetComponent<HeroBase>().DataValues.vRewardPlus + Team1[1].GetComponent<HeroBase>().DataValues.vRewardPlus + Team1[2].GetComponent<HeroBase>().DataValues.vRewardPlus) / 100;
             bool haveGem = IsWin ? UnityEngine.Random.Range(0, 100) < BattleCore.GemRewardEndBattleRate ? true : false : false; //Tính xem có thể nhận dc gem hay ko
             var gemReward = haveGem ? UnityEngine.Random.Range(0, BattleCore.MaxGemRewardEndBattle + 1) : 0; //Nếu win thì có tỉ lệ nhận dc ngẫu nhiên 1 số gem
@@ -1468,7 +1483,6 @@ namespace Assets.Code.Controller.SceneController
             }
             DataUserController.SaveUserInfor();
         }
-
 
         private IEnumerator WaitingCloseUI(int type)
         {

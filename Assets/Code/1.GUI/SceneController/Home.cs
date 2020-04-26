@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StartApp;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -48,18 +49,19 @@ public class Home : MonoBehaviour
         SetupVectorButtonFunctions();
         SetupShowHeroInTeam();
 
-        if(string.IsNullOrEmpty(DataUserController.User.UserName))
+        if (string.IsNullOrEmpty(DataUserController.User.UserName))
         {
             HiddenOrShowEffect(false);
             GameSystem.InitializePrefabUI(12);
             StartCoroutine(WaitingCloseUI(12));
         }
-        
+
         //Hiển thị câu hỏi hướng dẫn
-        if(!GameSystem.Settings.Tutorial)
-        {
-            GameSystem.ControlFunctions.ShowMessage(Languages.lang[355]);
-        }
+        //if (!GameSystem.Settings.Tutorial)
+        //{
+        //    GameSystem.ShowConfirmDialog(Languages.lang[355]);
+        //    StartCoroutine(WaitingAction(0));
+        //}
     }
 
     /// <summary>
@@ -155,7 +157,7 @@ public class Home : MonoBehaviour
         switch (type)
         {
             case -1://Test
-                StartCoroutine(API.APIPut("http://localhost:12345/home/44", null));
+                ADStartApp.ShowBanner();
                 break;
             case 0: //Hiển thị UI setting
                 //ObjHome[1].SetActive(true);
@@ -331,6 +333,26 @@ public class Home : MonoBehaviour
         ButtonFunctions(8); //Refresh lại giá trị tiền tệ
     }
 
+    /// <summary>
+    /// Chờ xác nhận OK
+    /// </summary>
+    /// <param name="type"></param>
+    /// <returns></returns>
+    private IEnumerator WaitingAction(int type)
+    {
+        yield return new WaitUntil(() => GameSystem.ConfirmBoxResult != 0);
+        //Success
+        if (GameSystem.ConfirmBoxResult.Equals(1))
+        {
+            switch (type)
+            {
+                case 0://Chấp nhận hướng dẫn
+
+                    break;
+                default: break;
+            }
+        }
+    }
     #endregion
 
     /// <summary>

@@ -115,7 +115,7 @@ public static class Languages {
         lang[56] = "Audio";
         lang[57] = "Nhạc nền";
         lang[58] = "Âm thanh";
-        lang[59] = "Ngôn ngữ";
+        lang[59] = "Chọn ngôn ngữ";
         //--------Button
         lang[60] = "Chấp nhận";
         lang[61] = "Chọn NV";
@@ -244,7 +244,7 @@ public static class Languages {
         lang[196] = "Chỉ số của trang bị sẽ ngẫu nhiên khi chế tạo";
         lang[197] = "Xác nhận";
         lang[198] = "Thuê sát thủ";
-        lang[199] = "Xác nhận thuê sát thủ với {0} đá quý";
+        lang[199] = "Xác nhận thuê sát thủ với {0} đá quý để giảm 5 cấp của vùng đất này?";
         lang[200] = "Máu";
         lang[201] = "Năng lượng";
         lang[202] = "Sát thương vật lý";
@@ -1539,7 +1539,7 @@ public static class Languages {
         lang[56] = "Audio";
         lang[57] = "Music";
         lang[58] = "Sound";
-        lang[59] = "Languages";
+        lang[59] = "Choose languages";
         //--------Button
         lang[60] = "OK";
         lang[61] = "Chọn NV";
@@ -1668,7 +1668,7 @@ public static class Languages {
         lang[196] += "Values of item is random when crafting";
         lang[197] = "Enter";
         lang[198] = "Hire Assassins";
-        lang[199] = "Hire assassins with {0} gems";
+        lang[199] = "Hire assassins with {0} gems to decrease 5 level at this region?";
 
         lang[200] = "Health";
         lang[201] = "Mana";
@@ -2034,84 +2034,84 @@ public static class Languages {
         ItemNameType0[13] = "Sword 7";
         ItemNameType0[14] = "Sword 8";
 
-        ItemNameType0[15] = "Rìu 1";
-        ItemNameType0[16] = "Rìu 2";
-        ItemNameType0[17] = "Rìu 3";
-        ItemNameType0[18] = "Rìu 4";
-        ItemNameType0[19] = "Rìu 5";
-        ItemNameType0[20] = "Rìu 6";
-        ItemNameType0[21] = "Rìu 7";
-        ItemNameType0[22] = "Rìu 8";
-        ItemNameType0[23] = "Rìu 9";
-        ItemNameType0[24] = "Rìu 10";
-        ItemNameType0[25] = "Rìu 11";
-        ItemNameType0[26] = "Rìu 12";
+        ItemNameType0[15] = "Axe 1";
+        ItemNameType0[16] = "Axe 2";
+        ItemNameType0[17] = "Axe 3";
+        ItemNameType0[18] = "Axe 4";
+        ItemNameType0[19] = "Axe 5";
+        ItemNameType0[20] = "Axe 6";
+        ItemNameType0[21] = "Axe 7";
+        ItemNameType0[22] = "Axe 8";
+        ItemNameType0[23] = "Axe 9";
+        ItemNameType0[24] = "Axe 10";
+        ItemNameType0[25] = "Axe 11";
+        ItemNameType0[26] = "Axe 12";
 
-        ItemNameType0[27] = "Búa 1";
-        ItemNameType0[28] = "Búa 2";
-        ItemNameType0[29] = "Búa 3";
-        ItemNameType0[30] = "Búa 4";
-        ItemNameType0[31] = "Búa 5";
-        ItemNameType0[32] = "Búa 6";
-        ItemNameType0[33] = "Búa 7";
-        ItemNameType0[34] = "Búa 8";
-        ItemNameType0[35] = "Búa 9";
-        ItemNameType0[36] = "Búa 10";
-        ItemNameType0[37] = "Búa 11";
-        ItemNameType0[38] = "Búa 12";
+        ItemNameType0[27] = "Hammer 1";
+        ItemNameType0[28] = "Hammer 2";
+        ItemNameType0[29] = "Hammer 3";
+        ItemNameType0[30] = "Hammer 4";
+        ItemNameType0[31] = "Hammer 5";
+        ItemNameType0[32] = "Hammer 6";
+        ItemNameType0[33] = "Hammer 7";
+        ItemNameType0[34] = "Hammer 8";
+        ItemNameType0[35] = "Hammer 9";
+        ItemNameType0[36] = "Hammer 10";
+        ItemNameType0[37] = "Hammer 11";
+        ItemNameType0[38] = "Hammer 12";
 
-        ItemNameType0[39] = "Chùy 1";
-        ItemNameType0[40] = "Chùy 2";
-        ItemNameType0[41] = "Chùy 3";
-        ItemNameType0[42] = "Chùy 4";
-        ItemNameType0[43] = "Chùy 5";
-        ItemNameType0[44] = "Chùy 6";
-        ItemNameType0[45] = "Chùy 7";
-        ItemNameType0[46] = "Chùy 8";
-        ItemNameType0[47] = "Chùy 9";
-        ItemNameType0[48] = "Chùy 10";
-        ItemNameType0[49] = "Chùy 11";
-        ItemNameType0[50] = "Cung 1";
-        ItemNameType0[51] = "Cung 2";
-        ItemNameType0[52] = "Cung 3";
-        ItemNameType0[53] = "Cung 4";
-        ItemNameType0[54] = "Cung 5";
-        ItemNameType0[55] = "Nỏ 1";
-        ItemNameType0[56] = "Nỏ 2";
-        ItemNameType0[57] = "Nỏ 3";
-        ItemNameType0[58] = "Nỏ 4";
-        ItemNameType0[59] = "Súng 1";
-        ItemNameType0[60] = "Súng 2";
-        ItemNameType0[61] = "Súng 3";
-        ItemNameType0[62] = "Súng 4";
-        ItemNameType0[63] = "Súng 5";
-        ItemNameType0[64] = "Súng 6";
-        ItemNameType0[65] = "Súng 7";
-        ItemNameType0[66] = "Súng 8";
+        ItemNameType0[39] = "Mace 1";
+        ItemNameType0[40] = "Mace 2";
+        ItemNameType0[41] = "Mace 3";
+        ItemNameType0[42] = "Mace 4";
+        ItemNameType0[43] = "Mace 5";
+        ItemNameType0[44] = "Mace 6";
+        ItemNameType0[45] = "Mace 7";
+        ItemNameType0[46] = "Mace 8";
+        ItemNameType0[47] = "Mace 9";
+        ItemNameType0[48] = "Mace 10";
+        ItemNameType0[49] = "Mace 11";
+        ItemNameType0[50] = "Bow 1";
+        ItemNameType0[51] = "Bow 2";
+        ItemNameType0[52] = "Bow 3";
+        ItemNameType0[53] = "Bow 4";
+        ItemNameType0[54] = "Bow 5";
+        ItemNameType0[55] = "Crossbow 1";
+        ItemNameType0[56] = "Crossbow 2";
+        ItemNameType0[57] = "Crossbow 3";
+        ItemNameType0[58] = "Crossbow 4";
+        ItemNameType0[59] = "Gun 1";
+        ItemNameType0[60] = "Gun 2";
+        ItemNameType0[61] = "Gun 3";
+        ItemNameType0[62] = "Gun 4";
+        ItemNameType0[63] = "Gun 5";
+        ItemNameType0[64] = "Gun 6";
+        ItemNameType0[65] = "Gun 7";
+        ItemNameType0[66] = "Gun 8";
 
         #endregion
 
         #region Tên item type 1 
 
-        ItemNameType1[0] = "Trượng 1";
-        ItemNameType1[1] = "Trượng 2";
-        ItemNameType1[2] = "Trượng 3";
-        ItemNameType1[3] = "Trượng 4";
-        ItemNameType1[4] = "Trượng 5";
-        ItemNameType1[5] = "Trượng 6";
-        ItemNameType1[6] = "Trượng 7";
-        ItemNameType1[7] = "Trượng 8";
+        ItemNameType1[0] = "Staff 1";
+        ItemNameType1[1] = "Staff 2";
+        ItemNameType1[2] = "Staff 3";
+        ItemNameType1[3] = "Staff 4";
+        ItemNameType1[4] = "Staff 5";
+        ItemNameType1[5] = "Staff 6";
+        ItemNameType1[6] = "Staff 7";
+        ItemNameType1[7] = "Staff 8";
 
         #endregion
 
         #region Tên item type 2 
 
-        ItemNameType2[0] = "Áo choàng 1";
-        ItemNameType2[1] = "Áo choàng 2";
-        ItemNameType2[2] = "Áo choàng 3";
-        ItemNameType2[3] = "Áo choàng 4";
-        ItemNameType2[4] = "Áo choàng 5";
-        ItemNameType2[5] = "Áo choàng 6";
+        ItemNameType2[0] = "Coat 1";
+        ItemNameType2[1] = "Coat 2";
+        ItemNameType2[2] = "Coat 3";
+        ItemNameType2[3] = "Coat 4";
+        ItemNameType2[4] = "Coat 5";
+        ItemNameType2[5] = "Coat 6";
 
         #endregion
 
@@ -2142,37 +2142,37 @@ public static class Languages {
 
         #region Tên item type 5 
 
-        ItemNameType5[0] = "Đai lưng 1";
-        ItemNameType5[1] = "Đai lưng 2";
-        ItemNameType5[2] = "Đai lưng 3";
-        ItemNameType5[3] = "Đai lưng 4";
-        ItemNameType5[4] = "Đai lưng 5";
-        ItemNameType5[5] = "Đai lưng 6";
+        ItemNameType5[0] = "Belt 1";
+        ItemNameType5[1] = "Belt 2";
+        ItemNameType5[2] = "Belt 3";
+        ItemNameType5[3] = "Belt 4";
+        ItemNameType5[4] = "Belt 5";
+        ItemNameType5[5] = "Belt 6";
 
         #endregion
 
         #region Tên item type 6 
 
-        ItemNameType6[0] = "Giáp tay 1";
-        ItemNameType6[1] = "Giáp tay 2";
-        ItemNameType6[2] = "Giáp tay 3";
-        ItemNameType6[3] = "Giáp tay 4";
-        ItemNameType6[4] = "Giáp tay 5";
-        ItemNameType6[5] = "Giáp tay 6";
-        ItemNameType6[6] = "Giáp tay 7";
-        ItemNameType6[7] = "Giáp tay 8";
-        ItemNameType6[8] = "Giáp tay 9";
-        ItemNameType6[9] = "Giáp tay 10";
+        ItemNameType6[0] = "Wrist 1";
+        ItemNameType6[1] = "Wrist 2";
+        ItemNameType6[2] = "Wrist 3";
+        ItemNameType6[3] = "Wrist 4";
+        ItemNameType6[4] = "Wrist 5";
+        ItemNameType6[5] = "Wrist 6";
+        ItemNameType6[6] = "Wrist 7";
+        ItemNameType6[7] = "Wrist 8";
+        ItemNameType6[8] = "Wrist 9";
+        ItemNameType6[9] = "Wrist 10";
 
         #endregion
 
         #region Tên item type 7 
 
-        ItemNameType7[0] = "Găng tay 1";
-        ItemNameType7[1] = "Găng tay 2";
-        ItemNameType7[2] = "Găng tay 3";
-        ItemNameType7[3] = "Găng tay 4";
-        ItemNameType7[4] = "Găng tay 5";
+        ItemNameType7[0] = "Gloves 1";
+        ItemNameType7[1] = "Gloves 2";
+        ItemNameType7[2] = "Gloves 3";
+        ItemNameType7[3] = "Gloves 4";
+        ItemNameType7[4] = "Gloves 5";
 
         #endregion
 

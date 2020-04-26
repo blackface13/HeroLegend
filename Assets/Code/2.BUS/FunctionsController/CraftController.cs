@@ -377,7 +377,7 @@ public class CraftController : MonoBehaviour {
                         InventorySystem.AddItemToInventory (GlobalVariables.ItemViewing);
 
                         //Trừ tiền
-                        UserSystem.DecreaseGolds (MoneyNeedForCraft);
+                        UserSystem.DecreaseGolds (MoneyNeedForCraft, true);
 
                         //Lưu dữ liệu
                         DataUserController.SaveUserInfor ();

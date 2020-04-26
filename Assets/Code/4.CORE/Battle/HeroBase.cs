@@ -626,7 +626,7 @@ public class HeroBase : MonoBehaviour
     {
         Time.timeScale = .2f;
         yield return new WaitForSeconds(.05f);
-        Time.timeScale = 1f;
+        Time.timeScale = BattleCore.BattleSpeed[GlobalVariables.SlotBattleSpeed];
     }
 
     /// <summary>

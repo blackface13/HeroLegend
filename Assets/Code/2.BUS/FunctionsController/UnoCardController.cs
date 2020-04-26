@@ -1013,7 +1013,7 @@ namespace Assets.Code._2.BUS.FunctionsController
             //Cộng tiền nếu win
             if (SlotPlyerWinner == 0)
             {
-                UserSystem.IncreaseGolds(UnoCardSystem.BetLevel[UnoCardSystem.BetLevelSlot] * TotalPlayer);
+                UserSystem.IncreaseGolds(UnoCardSystem.BetLevel[UnoCardSystem.BetLevelSlot] * TotalPlayer, true);
                 DataUserController.SaveUserInfor();
             }
 
@@ -1221,7 +1221,7 @@ namespace Assets.Code._2.BUS.FunctionsController
                             ResetVariables();
                             SetupNewBattle();
                             ObjController[17].SetActive(false);
-                            UserSystem.DecreaseGolds(UnoCardSystem.BetLevel[UnoCardSystem.BetLevelSlot]);
+                            UserSystem.DecreaseGolds(UnoCardSystem.BetLevel[UnoCardSystem.BetLevelSlot], true);
                             DataUserController.SaveUserInfor();
                         }
                     }

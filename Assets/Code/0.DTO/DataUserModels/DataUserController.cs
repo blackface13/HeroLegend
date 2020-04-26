@@ -212,25 +212,25 @@ public static class DataUserController
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 8, 0, 1));//Kiếm ngắn
 
             //Vật phẩm
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 0,  5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 1,  5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 2,  5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 3,  5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 4,  5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 5,  5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 6,  5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 7,  5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 8,  5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 9,  5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 10, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 11, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 12, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 13, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 14, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 15, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 16, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 17, 5));
-            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 50, 18, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 0, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 1, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 2, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 3, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 4, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 5, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 6, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 7, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 8, 5));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 9, 50));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 10, 50));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 11, 50));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 12, 50));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 13, 50));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 14, 50));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 15, 50));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 16, 50));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 17, 50));
+            Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 18, 50));
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 19, 5));
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 20, 5));
             Inventory.DBItems.Add(ItemSystem.CreateItem(false, false, 1, 10, 21, 5));
@@ -315,7 +315,7 @@ public static class DataUserController
         {
             CreateSetting();
         }
-        else 
+        else
             GameSystem.Settings = JsonUtility.FromJson<SettingModel>(strsave);
 
         //print (Application.systemLanguage);
@@ -389,7 +389,7 @@ public static class DataUserController
             MusicEnable = true,
             SkillSlowMotion = false,
             SoundEnable = true,
-            Tutorial = true
+            Tutorial = false
         };
         SaveData(StrSaveSetting, JsonUtility.ToJson(GameSystem.Settings));
     }
@@ -407,8 +407,9 @@ public static class DataUserController
             BattleLose = 0,
             BattleWin = 0,
             NumberSpined = 0,
-            DifficultMap = new float[7] { 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f },
+            //DifficultMap = new float[7] { 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f },
             EnemyFutureMap = new string[7],
+            LevelMap = new int[7] { 1,1,1,1,1,1,1 },
             Gems = UserSystem.GemsDefault,
             Golds = UserSystem.GoldsDefault,
             HWID = SystemInfo.deviceUniqueIdentifier.ToString(),

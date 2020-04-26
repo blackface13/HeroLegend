@@ -23,6 +23,6 @@ public static class GlobalVariables {
     public static bool ObjectIsMoving = false;//Object có đang di chuyển hay ko, dùng cho GameSystem.MoveObjectCurve
     public static bool ActionLock = false;//Có khóa thao tác hay ko
     public static bool IsReduceItemToEmpty = false;//Giảm trừ item trong inventory mà item đó = 0
-
+    public static readonly int MapLevelDeclareHireAssassin = 5;//Mỗi lần thuê sát thủ là giảm level map đi số lượng này
     #endregion
 }

@@ -2,13 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
+using System;
+using StartApp;
 //Loading đầu game
 public class LoadingIntro : MonoBehaviour {
     private string SavePolicy = "AcceptPolicy";
     SceneLoad ScnLoad = new SceneLoad ();
     public GameObject[] Obj;
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
+        //AD StarApp
+        AdSdk.Instance.SetUserConsent(
+ "pas",
+ true,
+ (long)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalMilliseconds);
+
+        AdSdk.Instance.ShowSplash();
+
         #region Khởi tạo hoặc set Canvas thông báo cho Scene 
         try {
             GameSystem.MessageCanvas.GetComponent<Canvas> ().worldCamera = Camera.main;
@@ -18,13 +29,14 @@ public class LoadingIntro : MonoBehaviour {
             GameSystem.MessageCanvas.GetComponent<Canvas> ().planeDistance = 1;
         }
         #endregion
+
         GameSystem.ControlFunctions.SetupServer();//Khởi tạo server khi mở game
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         ErrorCode.Initialize();//Khởi tạo các mã lỗi
         StartCoroutine (WaitForShowPolicy ());
         MobileAds.Initialize(initStatus => { });
-        ADS.Initialize();
-        ADS.RequestBanner(0);
+        //ADS.Initialize();
+        //ADS.RequestBanner(0);
         ItemDropController.Initialize ();
     }
     private IEnumerator WaitForShowPolicy () {

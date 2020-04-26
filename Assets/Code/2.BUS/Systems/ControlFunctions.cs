@@ -35,6 +35,26 @@ public class ControlFunctions : MonoBehaviour {
     }
 
     /// <summary>
+    /// Hiển thị thông báo liên tục
+    /// </summary>
+    private IEnumerator ShowMessageContinuity(string[] text)
+    {
+        for (int i = 0; i < text.Length; i++)
+        {
+            if (!string.IsNullOrEmpty(text[i]))
+            {
+                StartCoroutine(GameSystem.ShowMessage(text[i])); //Show tin nhắn từ GameSystem
+                yield return new WaitForSeconds(GlobalVariables.DelayBetween2MessageDisplay);
+            }
+        }
+    }
+
+    public void ShowManyMessage(string[] text)
+    {
+        StartCoroutine(ShowMessageContinuity(text));
+    }
+
+    /// <summary>
     /// Khởi tạo lấy dữ liệu từ server khi load game
     /// </summary>
     public void SetupServer () {

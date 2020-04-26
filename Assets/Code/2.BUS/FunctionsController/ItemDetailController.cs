@@ -229,8 +229,8 @@ public class ItemDetailController : MonoBehaviour {
 
                 //Xác nhận đồng ý
                 if (GameSystem.ConfirmBoxResult == 1) {
-                    UserSystem.IncreaseGolds (GlobalVariables.ItemViewing.ItemPrice); //Cộng tiền
-                    GameSystem.ControlFunctions.ShowMessage (Languages.lang[275] + GlobalVariables.ItemViewing.ItemPrice + Languages.lang[276]); // "Nhận dc ... vàng";
+                    UserSystem.IncreaseGolds (GlobalVariables.ItemViewing.ItemPrice, true); //Cộng tiền
+                    //GameSystem.ControlFunctions.ShowMessage (Languages.lang[275] + GlobalVariables.ItemViewing.ItemPrice + Languages.lang[276]); // "Nhận dc ... vàng";
                     InventorySystem.RemoveItem (GlobalVariables.ItemViewing); //Xóa item khỏi inventory
                     DataUserController.SaveUserInfor ();
                     DataUserController.SaveInventory ();

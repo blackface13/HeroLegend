@@ -212,6 +212,7 @@
     <Compile Include="Assets\Code\4.CORE\UnoCard\UnoCardSettings.cs" />
     <Compile Include="Assets\Code\4.CORE\UnoCard\UnoCardSystem.cs" />
     <Compile Include="Assets\Code\4.CORE\Users\UserSystem.cs" />
+    <Compile Include="Assets\Code\5.PLUGINS\ADStartApp.cs" />
     <Compile Include="Assets\Code\5.PLUGINS\CollisionSystem.cs" />
     <Compile Include="Assets\Code\5.PLUGINS\Gradient.cs" />
     <Compile Include="Assets\Code\5.PLUGINS\Lake2DWater.cs" />
@@ -347,6 +348,7 @@
     <None Include="Assets\UpdateManager\READ ME.txt" />
     <None Include="Assets\Anima2D\Examples\Shaders\VisibleOutsideMask.shader" />
     <None Include="Assets\Anima2D\Version.txt" />
+    <None Include="Assets\Resources\StartAppDataiOS.txt" />
     <None Include="Assets\UI\Shaders\Blur.shader" />
     <None Include="Assets\UI\Shaders\Lake 2D Ripple.shader" />
     <None Include="Assets\Demigiant\DOTween\readme.txt" />
@@ -355,6 +357,7 @@
     <None Include="Assets\Anima2D\Examples\Shaders\VertexLitOneDirectional.shader" />
     <None Include="Assets\UI\Shaders\Ripple 3.shader" />
     <None Include="Assets\Demigiant\DemiLib\Core\DemiLib.xml" />
+    <None Include="Assets\Resources\StartAppDataAndroid.txt" />
     <None Include="Assets\FacebookSDK\link.xml" />
     <None Include="Assets\Anima2D\Readme.txt" />
     <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
@@ -996,6 +999,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{64CB8020-5DDD-FBF1-FD4D-1BDA3DE8E5E7}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj">
       <Project>{6086DA44-FB60-26C2-050B-8924903F7D06}</Project>
       <Name>Sirenix.OdinInspector.CompatibilityLayer.Editor</Name>

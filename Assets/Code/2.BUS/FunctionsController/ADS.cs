@@ -67,7 +67,11 @@ public static class ADS
     /// </summary>
     public static void HideBanner()
     {
-        bannerView.Hide();
+        try
+        {
+            bannerView.Hide();
+        }
+        catch { }
     }
 
     public static void ShowBanner()

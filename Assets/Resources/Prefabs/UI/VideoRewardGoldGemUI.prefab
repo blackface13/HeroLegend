@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60, y: 0}
+  m_AnchoredPosition: {x: -96.6, y: -1.75}
   m_SizeDelta: {x: 53.8, y: 52.4}
   m_Pivot: {x: 0.50000006, y: 0.5}
 --- !u!222 &8867328296349738858
@@ -546,12 +546,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7158440522843017174}
-        m_MethodName: ButtonWatchVideo
-        m_Mode: 3
+        m_MethodName: ButtonChangeGem
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1487,7 +1487,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100     = 5000
+  m_Text: 50     = 10000
 --- !u!114 &7158440522287312607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,7 +1984,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7158440522843017174}
         m_MethodName: ButtonWatchVideo
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2125,8 +2125,8 @@ MonoBehaviour:
   - {fileID: 7158440522344189068}
   - {fileID: 7158440522785824762}
   - {fileID: 7158440522287312604}
-  GemQuantityRequired: 500
-  GoldQuantityReceived: 1000
+  GemQuantityRequired: 50
+  GoldQuantityReceived: 10000
 --- !u!1 &7158440522854855044
 GameObject:
   m_ObjectHideFlags: 0

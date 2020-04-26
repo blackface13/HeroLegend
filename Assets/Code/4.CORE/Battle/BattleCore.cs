@@ -37,7 +37,7 @@ namespace BlackCore {
         public static string TagKillReHP = "SkillReHP"; //Tên tag skill hồi máu cho đồng đội
         public static string TagKillShield = "SkillShield"; //Tên tag skill hồi máu cho đồng đội
         public static string TagEffectFireBurn = "FireBurn"; //Tên tag hiệu ứng thiêu đốt
-        public static float DifficultPerRound = 0.1f; //Độ khó sau mỗi lần vượt map
+        public static int DifficultPerRound = 1; //Level sau mỗi lần win map
         public static int ItemPerRound = 1; //Khoảng số lượng item nhận được sau mỗi trận đấu
         public static int MaxItemReward = 15; //Số lượng tối đa loại item có thể nhận trong 1 trận đấu
         public static readonly sbyte GemRewardEndBattleRate = 50; //Tỉ lệ nhận dc gem sau mỗi trận đấu
@@ -127,13 +127,17 @@ namespace BlackCore {
         /// <summary>
         /// Điều chỉnh độ khó của map
         /// </summary>
-        /// <param name="type">0: tăng dần độ khó, 1 giảm độ khó về ngang hàng</param>
+        /// <param name="type">0: tăng dần độ khó, 1 -> trừ 5 level cho vùng đất đó</param>
         /// <param name="mapID">id của loại map (xem trong module)</param>
         public static void ChangeDifficult (int type, int mapID) {
-            if (type.Equals (0))
-                DataUserController.User.DifficultMap[mapID] += BattleCore.DifficultPerRound;
+            if (type.Equals(0))
+                DataUserController.User.LevelMap[mapID] += BattleCore.DifficultPerRound;
             else
-                DataUserController.User.DifficultMap[mapID] = 1; //Set tạm bằng 1, phải viết hàm tính toán để thay 1 thành giá trị sức mạnh hiện tại của user
+            {
+                DataUserController.User.LevelMap[mapID] -= GlobalVariables.MapLevelDeclareHireAssassin;
+                if (DataUserController.User.LevelMap[mapID] < 1)
+                    DataUserController.User.LevelMap[mapID] = 1;
+            }
         }
 
         /// <summary>
