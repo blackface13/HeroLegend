@@ -20235,7 +20235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &638601594
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39769,7 +39769,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   ListButtonToMove:
   - {fileID: 114404320}
-  - {fileID: 2136918991}
   - {fileID: 25224608}
   - {fileID: 680630378}
   - {fileID: 365419681}

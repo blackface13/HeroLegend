@@ -578,7 +578,7 @@ public class InsertSocketController : MonoBehaviour {
                                 //}
 
                                 //Trừ vàng, save data
-                                UserSystem.DecreaseGolds (goldRequired, true);
+                                UserSystem.DecreaseGolds (goldRequired, false);
                                 DataUserController.SaveUserInfor ();
                             } else {
                                 GameSystem.ControlFunctions.ShowMessage (Languages.lang[296]); //Không thể khảm
