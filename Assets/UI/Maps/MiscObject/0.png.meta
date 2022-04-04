@@ -1,11 +1,15 @@
 fileFormatVersion: 2
 guid: ab9c22c4a03d72645bad713186be8787
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: 0_0
-    21300002: 0_1
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: 0_0
+  - first:
+      213: 21300002
+    second: 0_1
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -33,9 +37,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -59,8 +63,9 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -71,7 +76,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -82,7 +88,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -93,6 +100,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 1
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -112,6 +120,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d477004549b2940438532656a5e7a734
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -132,6 +141,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: be692cb42e35cc84db34521c987c4cfd
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -140,10 +150,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 2ae1198d87510674695dd5d90c3ec785
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

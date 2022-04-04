@@ -1,4 +1,4 @@
-﻿using StartApp;
+﻿//using StartApp;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ public class InventoryController : MonoBehaviour
     [Header("Draw Curve")]
     public AnimationCurve moveCurve;
     public Slider SliderItemSell;
-    InterstitialAd VideoGemReward;
+    //InterstitialAd VideoGemReward;
     #endregion
 
     // Start is called before the first frame update
@@ -73,15 +73,15 @@ public class InventoryController : MonoBehaviour
     private void SetupADS()
     {
         //Tạo video
-        VideoGemReward = AdSdk.Instance.CreateInterstitial();
-        VideoGemReward.RaiseAdVideoCompleted += (sender, e) =>
-        {
-            DataUserController.User.InventorySlot += 1;
-            DataUserController.SaveUserInfor();
-            GameSystem.ControlFunctions.ShowMessage(Languages.lang[359]);// "Túi đồ +1 ô";
-            VideoGemReward.LoadAd(InterstitialAd.AdType.Rewarded);
-        };
-        VideoGemReward.LoadAd(InterstitialAd.AdType.Rewarded);
+        //VideoGemReward = AdSdk.Instance.CreateInterstitial();
+        //VideoGemReward.RaiseAdVideoCompleted += (sender, e) =>
+        //{
+        //    DataUserController.User.InventorySlot += 1;
+        //    DataUserController.SaveUserInfor();
+        //    GameSystem.ControlFunctions.ShowMessage(Languages.lang[359]);// "Túi đồ +1 ô";
+        //    VideoGemReward.LoadAd(InterstitialAd.AdType.Rewarded);
+        //};
+        //VideoGemReward.LoadAd(InterstitialAd.AdType.Rewarded);
     }
 
     /// <summary>
@@ -1059,12 +1059,12 @@ public class InventoryController : MonoBehaviour
                 //Xác nhận đồng ý
                 if (GameSystem.ConfirmBoxResult == 1)
                 {
-                    if (VideoGemReward.IsReady())
-                    {
-                        VideoGemReward.ShowAd(); //Hiển thị video quảng cáo
-                    }
-                    else
-                        GameSystem.ControlFunctions.ShowMessage((Languages.lang[181])); //Chờ video tiếp theo dc tải
+                    //if (VideoGemReward.IsReady())
+                    //{
+                    //    VideoGemReward.ShowAd(); //Hiển thị video quảng cáo
+                    //}
+                    //else
+                    //    GameSystem.ControlFunctions.ShowMessage((Languages.lang[181])); //Chờ video tiếp theo dc tải
                 }
                 break;
             default:

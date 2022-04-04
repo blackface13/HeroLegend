@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 using System.Linq;
 using BlackCore;
-using StartApp;
+//using StartApp;
 using UnityEngine;
 using UnityEngine.UI;
 namespace Assets.Code.Controller.SceneController
@@ -60,7 +60,7 @@ namespace Assets.Code.Controller.SceneController
         public AudioSource BGM;
         //=========================
 
-        InterstitialAd ADSInters;
+        //InterstitialAd ADSInters;
         #endregion
 
         #region Initialize 
@@ -108,12 +108,12 @@ namespace Assets.Code.Controller.SceneController
             ItemDropController.Initialize(); //Khởi tạo item droped
 
             //Quảng cáo xen kẽ
-            ADSInters = AdSdk.Instance.CreateInterstitial();
-            ADSInters.RaiseAdLoaded += (sender, e) =>
-            {
-                //ADSInters.ShowAd("adTagIfNeeded");
-            };
-            ADSInters.LoadAd(InterstitialAd.AdType.Automatic);
+            //ADSInters = AdSdk.Instance.CreateInterstitial();
+            //ADSInters.RaiseAdLoaded += (sender, e) =>
+            //{
+            //    //ADSInters.ShowAd("adTagIfNeeded");
+            //};
+            //ADSInters.LoadAd(InterstitialAd.AdType.Automatic);
         }
 
         /// <summary>
@@ -1183,10 +1183,10 @@ namespace Assets.Code.Controller.SceneController
             //}
 
             //Hiển thị quảng cáo sau trận
-            if (ADSInters.IsReady())
-            {
-                ADSInters.ShowAd();
-            }
+            //if (ADSInters.IsReady())
+            //{
+            //    ADSInters.ShowAd();
+            //}
 
             if (IsWin)
             {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
 using System;
-using StartApp;
+//using StartApp;
 //Loading đầu game
 public class LoadingIntro : MonoBehaviour {
     private string SavePolicy = "AcceptPolicy";
@@ -13,12 +13,12 @@ public class LoadingIntro : MonoBehaviour {
     void Start ()
     {
         //AD StarApp
-        AdSdk.Instance.SetUserConsent(
- "pas",
- true,
- (long)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalMilliseconds);
+ //       AdSdk.Instance.SetUserConsent(
+ //"pas",
+ //true,
+ //(long)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalMilliseconds);
 
-        AdSdk.Instance.ShowSplash();
+ //       AdSdk.Instance.ShowSplash();
 
         #region Khởi tạo hoặc set Canvas thông báo cho Scene 
         try {

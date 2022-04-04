@@ -1,14 +1,24 @@
 fileFormatVersion: 2
 guid: 726d2784a87b044f182b7487b3b8ebb8
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: t_rex_body
-    21300002: t_rex_leg
-    21300004: t_rex_head
-    21300006: t_rex_jaw_open_back
-    21300008: t_rex_jaw_open
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: t_rex_body
+  - first:
+      213: 21300002
+    second: t_rex_leg
+  - first:
+      213: 21300004
+    second: t_rex_head
+  - first:
+      213: 21300006
+    second: t_rex_jaw_open_back
+  - first:
+      213: 21300008
+    second: t_rex_jaw_open
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
@@ -62,8 +72,9 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -74,6 +85,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -92,7 +104,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d120ce8f56f96ad4a9a09b3386dd91a3
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -112,7 +125,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acc9247ddcf12dc429f7073ea267844e
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -132,7 +146,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e1a103d0589ff2845b0861c93f4a7feb
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -152,7 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 52d553ab2cdd46f4a8bf224ccf13c2d0
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -172,7 +188,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8f51490555fd42941816e88b3d8d0503
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -181,10 +198,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: trex
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
